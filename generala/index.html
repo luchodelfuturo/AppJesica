@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title> Generala</title>
+    </head>
+    <body>
+        <div class="app">
+            
+            <h1>Generala</h1>
+          
+            <div id="dados"></div>
+        
+            <table id="puntajes">
+
+                <thead>
+
+                        <tr>
+
+                            <th>Juego</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody></tbody>
+
+            </table>
+            
+            <div id="tiros"> 
+
+                Tiros:  <span></span>
+
+            </div>
+
+            <div>
+
+                <button id="tirarDados" onclick="tirar();">Tirar!</button>
+                
+                <button id="mostrarTabla" onclick="initGame();">REINICIAR</button>
+            </div>
+            
+            <div id="modal" class="nodisp">
+
+                <h2>
+                    Titulo
+                </h2>
+
+                <p> el Mensaje</p>
+
+                <button onclick="document.getElementById('modal').classList.add('nodisp')">OK</button>
+            </div>
+
+            <div id="modal2" class="nodisp" data-que-juego="1">
+
+                <h2>
+                    ¿Esta seguro?
+                </h2>
+
+                <p>¿Realmente desea...</p>
+
+                <button onclick="confirmAceptado();">Si</button>
+
+                <button onclick="confirmRechazado();">No</button>
+
+            </div>
+        </div>
+
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
