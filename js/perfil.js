@@ -12,7 +12,7 @@ let player = 0;
 // }
 
 function cargarPerfil() {
-  console.log("Cargando Perfil..");
+  console.log("Cargando Usuarios... ");
 
   perfiles = Storage.cargar("perfiles") || [];
 
