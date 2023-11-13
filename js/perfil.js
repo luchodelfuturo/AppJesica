@@ -72,6 +72,8 @@ function validarForm() {
     return false;
   }
 
+  console.log("Probando Cambio")
+
   
  // apodo.length 
   //   if (img.getAttribute("src") === "img/usuario-de-perfil.png") {
