@@ -7,8 +7,10 @@
     <title>perfil</title>
   </head>
   <body id="formulario" onload="cargarPerfil()">
-    <h1>Perfil del jugador <span id="jugador"></span></h1>
+  
+    <div class="app">
 
+    <h1>Perfil del jugador <span id="jugador"></span></h1>
     <form id="formulalrio">
       <label for="nombre">Nombre: </label
       ><input type="nombre" id="nombre" /><br />
@@ -27,7 +29,8 @@
 
       <button type="button" id="btn-guardar-perfil">Guardar</button>
     </form>
-
+    
+  </div>
     <script src="cordova.js"></script>
     <script src="js/lib.js"></script>
     <script src="js/perfil.js"></script>
