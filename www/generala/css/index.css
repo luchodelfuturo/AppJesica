@@ -1,4 +1,7 @@
 
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
 
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
@@ -6,7 +9,7 @@ body {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     user-select: none;
     background-color:#E4E4E4;
-    background-image:linear-gradient(to bottom, #cfffc5 0%, #abf678 51%);
+    background-image:linear-gradient(to bottom, #A7A7A7 0%, #E4E4E4 51%);
     font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
     font-size:16px;
     height:100vh;
@@ -32,7 +35,6 @@ body {
 
 h1 {
    text-align: center;
-   color: rgba(255, 0, 149, 0.8);
 }
 
 
@@ -46,11 +48,10 @@ h1 {
 .dado.seleccionado 
 {
 
-    border: 2px solid rgba(255, 0, 149, 0.8);
+    border: 2px solid red;
 
 }
 
-/* tendria que ser del color del usuario correspondiente */
 .turnoActual {
 
     background-color: black;
@@ -65,9 +66,7 @@ h1 {
 
 #modal h2{
 
-    background-color: #abf678 
-    color rgba(255, 0, 149, 0.8);
-    border-radius: 1em;
+    background-color: aquamarine;
 
 }
 
@@ -83,14 +82,16 @@ h1 {
 
 #modal2 {
 
-    background-color: #abf678 
-    color rgba(255, 0, 149, 0.8);
+    background-color: rgb(36, 98, 32);
+
+    color: white;
+
     border-radius: 1em;
 }
 
 #modal2 h2{
 
-    background-color:rgb(146, 255, 141);
+    background-color:rgb(19, 55, 17);
 
     border-radius: 0,2em;
 
@@ -104,7 +105,7 @@ h1 {
 
 @media screen and (prefers-color-scheme: dark) {
     body {
-        background-image:linear-gradient(to bottom, #cfffc5 0%, #abf678 51%);
+        background-image:linear-gradient(to bottom, #585858 0%, #3a814e 51%);
     }
 }
 
