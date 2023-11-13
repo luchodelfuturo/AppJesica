@@ -19,7 +19,7 @@ function cargarPerfil() {
   player = Number(new URLSearchParams(window.location.search).get("player"));
 
   document.getElementById("jugador").innerHTML = player + 1;
-
+// perfiles = [0{},1{}] perfiles[1]
   if (perfiles[player]) {
     document.getElementById("nombre").value = perfiles[player].nombre;
 
@@ -34,7 +34,7 @@ function cargarPerfil() {
 function guardarPerfil(event) {
   event.preventDefault();
 
-  validarForm();
+ 
   //  ["nombre", "apodo", "color", "pic"].forEach((campo) =>
   //   document.getElementById(campo)
   // );
@@ -47,11 +47,11 @@ function guardarPerfil(event) {
       color: document.getElementById("color").value,
       pic: document.getElementById("pic").src,
     };
-console.log("HOLA")
+    //perfiles = [ {nombre, apodo, color, pic}, {nombre,apodo}]
     Storage.guardar("perfiles", perfiles);
 
     if (perfiles.length < cantJugadores) {
-      window.location.href = "perfil.htm?player=" + perfiles.length;
+      window.location.href = "perfil.html?player=" + perfiles.length;
     } else {
       window.location.href = "menu.html";
     }
@@ -95,6 +95,7 @@ function validarForm() {
   // } else {
   //   return true;
   // }
+  return true
 }
 
 function esValido(propiedad, valor) {
