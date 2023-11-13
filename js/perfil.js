@@ -33,38 +33,40 @@ function cargarPerfil() {
 
 function guardarPerfil(event) {
   event.preventDefault();
-  validarForm()
+
+  validarForm();
   // ["nombre", "apodo", "color", "pic"].forEach((campo) =>
   //   document.getElementById(campo)
   // );
   // Si el formulario es valido, se guarda en el Storage (base de datos)
-//   if (validarForm()) {
-//     console.log("Guardando..");
-//     perfiles[player] = {
-//       nombre: document.getElementById("nombre").value,
-//       apodo: document.getElementById("apodo").value,
-//       color: document.getElementById("color").value,
-//       pic: document.getElementById("pic").getAttribute("src"),
-//     };
+  //   if (validarForm()) {
+  //     console.log("Guardando..");
+  //     perfiles[player] = {
+  //       nombre: document.getElementById("nombre").value,
+  //       apodo: document.getElementById("apodo").value,
+  //       color: document.getElementById("color").value,
+  //       pic: document.getElementById("pic").getAttribute("src"),
+  //     };
 
-//     Storage.guardar("perfiles", perfiles);
+  //     Storage.guardar("perfiles", perfiles);
 
-//     if (perfiles.length < cantJugadores) {
-//       window.location.href = "perfil.htm?player=" + perfiles.length;
-//     } else {
-//       window.location.href = "menu.html";
-//     }
-//   }
+  //     if (perfiles.length < cantJugadores) {
+  //       window.location.href = "perfil.htm?player=" + perfiles.length;
+  //     } else {
+  //       window.location.href = "menu.html";
+  //     }
+  //   }
 }
 
 function validarForm() {
   //   if (!utils.validarCamposDeTexto(["nombre", "apodo", "color"], 2, esValido)) {
   //     return false;
   //   }
+  console.log("Validando...");
   let nombre = document.getElementById("nombre").value;
-//   let apodo = document.getElementById("apodo").value;
-//   let img = document.getElementById("pic").value;
-//   let color = document.getElementById("color").value;
+  let apodo = document.getElementById("apodo").value;
+  let img = document.getElementById("pic").src;
+  let color = document.getElementById("color").value;
 
   if (nombre === "") {
     console.log("Nombre vacio");
@@ -72,22 +74,27 @@ function validarForm() {
     return false;
   }
 
-  console.log("Probando Cambio")
+  if (apodo === "") {
+    console.log("apodo vacio");
+    alert("El apodo esta vacio");
+    return false;
+  }
+  console.log(color);
+  if (color === "#000000") {
+    console.log("color vacio");
+    alert("El color esta vacio");
 
-  
- // apodo.length 
-  //   if (img.getAttribute("src") === "img/usuario-de-perfil.png") {
-  //     //todavía no se saco la foto y no es valido
+    return false;
+  }
+  console.log(img);
+  // apodo.length
+  // if (img.getAttribute("src") === "img/usuario-de-perfil.png") {
+  //   //     //todavía no se saco la foto y no es valido
 
-  //     img.classList.add("notValid");
-
-  //     img.focus();
-
-  //     return false;
-  //   } else {
-  //     img.classList.remove("notValid");
-  //   }
+  //   return false;
+  // } else {
   //   return true;
+  // }
 }
 
 function esValido(propiedad, valor) {
@@ -101,22 +108,40 @@ function esValido(propiedad, valor) {
 }
 
 function takePicture() {
-  navigator.camera.getPicture(onPicture, onPictureError, {
-    destinationType: Camera.DestinationType.DATA_URL,
-
-    quality: 35,
-  });
+  navigator.camera.getPicture(
+    (imageData) => {
+      document.getElementById("pic").src =
+        "data:image/jpeg;base64," + imageData;
+    },
+    (error) => {
+      console.error("No se puede tomar la foto", error);
+    },
+    {
+      destinationType:
+        device.platform === "browser"
+          ? Camera.DestinationType.FILE_URI
+          : Camera.DestinationType.DATA_URL,
+    }
+  );
 }
 
-function onPicture(data) {
-  document
-    .getElementById("pic")
-    .setAttribute("src", "data:image/jpeg;base64," + data);
-}
+// function takePicture() {
+//   navigator.camera.getPicture(onPicture, onPictureError, {
+//     destinationType: Camera.DestinationType.DATA_URL,
 
-function onPictureError(err) {
-  console.error("No se puede tomar la foto ", err);
-}
+//     quality: 35,
+//   });
+// }
+
+// function onPicture(data) {
+//   document
+//     .getElementById("pic")
+//     .setAttribute("src", "data:image/jpeg;base64," + data);
+// }
+
+// function onPictureError(err) {
+//   console.error("No se puede tomar la foto ", err);
+// }
 
 /* FUNCIONES O EVENTOS DE HTML --- */
 
