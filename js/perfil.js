@@ -35,27 +35,27 @@ function guardarPerfil(event) {
   event.preventDefault();
 
   validarForm();
-   ["nombre", "apodo", "color", "pic"].forEach((campo) =>
-    document.getElementById(campo)
-  );
-  Si el formulario es valido, se guarda en el Storage (base de datos)
-    if (validarForm()) {
-      console.log("Guardando..");
-      perfiles[player] = {
-        nombre: document.getElementById("nombre").value,
-        apodo: document.getElementById("apodo").value,
-        color: document.getElementById("color").value,
-        pic: document.getElementById("pic").src,
-      };
+  //  ["nombre", "apodo", "color", "pic"].forEach((campo) =>
+  //   document.getElementById(campo)
+  // );
+  // Si el formulario es valido, se guarda en el Storage (base de datos)
+  if (validarForm()) {
+    console.log("Guardando..");
+    perfiles[player] = {
+      nombre: document.getElementById("nombre").value,
+      apodo: document.getElementById("apodo").value,
+      color: document.getElementById("color").value,
+      pic: document.getElementById("pic").src,
+    };
+console.log("HOLA")
+    Storage.guardar("perfiles", perfiles);
 
-      Storage.guardar("perfiles", perfiles);
-
-      if (perfiles.length < cantJugadores) {
-        window.location.href = "perfil.htm?player=" + perfiles.length;
-      } else {
-        window.location.href = "menu.html";
-      }
+    if (perfiles.length < cantJugadores) {
+      window.location.href = "perfil.htm?player=" + perfiles.length;
+    } else {
+      window.location.href = "menu.html";
     }
+  }
 }
 
 function validarForm() {
@@ -86,7 +86,7 @@ function validarForm() {
 
     return false;
   }
-  
+
   // apodo.length
   // if (img.getAttribute("src") === "img/usuario-de-perfil.png") {
   //   //     //todavía no se saco la foto y no es valido
