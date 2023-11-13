@@ -7,7 +7,7 @@ body {
     font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
     font-size:16px;
     height: 1920px;
-    width: 1080px;;
+    width: 2220px;;
     margin:0px;
     padding:0px;
     /* Padding to avoid the "unsafe" areas behind notches in the screen */
@@ -17,7 +17,7 @@ body {
 
 .app {
     position: absolute;
-    left: 40%;
+    left: 25%;
     top: 10%;
 }
 
