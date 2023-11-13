@@ -58,22 +58,27 @@ h1 {
 
 #modal {
 
-    background-color: palevioletred;
+    background-color: rgba(255, 0, 149, 0.8);
 
-    color: white;
-}
-
-#modal h2{
-
-    background-color: #abf678 
-    color rgba(255, 0, 149, 0.8);
     border-radius: 1em;
 
+    color: white;
+
+    text-align: center;
 }
+
+button {
+    background-color:  rgba(255, 0, 149, 0.8);
+    color: white ;
+    border:#abf678;
+    border-radius: 1em;
+}
+
 
 #modal p{
 
     padding: 0,25rem;
+    
 }
 
 .nodisp {
@@ -83,14 +88,14 @@ h1 {
 
 #modal2 {
 
-    background-color: #abf678 
-    color rgba(255, 0, 149, 0.8);
+    background-color:  rgba(255, 0, 149, 0.8);
+   
     border-radius: 1em;
 }
 
 #modal2 h2{
 
-    background-color:rgb(146, 255, 141);
+    background-color:  rgba(255, 0, 149, 0.8);
 
     border-radius: 0,2em;
 
