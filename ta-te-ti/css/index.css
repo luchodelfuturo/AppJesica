@@ -24,7 +24,7 @@ body {
 }
 
 h1,#tipografia {
-    font-size:40px;
+   font-size:40px;
     font-weight: bolder;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -41,7 +41,7 @@ h1,#tipografia {
 }*/
 
 #ta-te-ti {
-    width: 15em;
+    width: 10em;
     margin: 0 auto;
     background-image:linear-gradient(to bottom, #a8ff97 0%, #caf3ae 51%);
     border-collapse: collapse;
