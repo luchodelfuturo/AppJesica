@@ -38,6 +38,10 @@ h1 {
     color: rgba(255, 0, 149, 0.8);;
 }
 
+ul{
+    list-style: none;
+    list-style-type: none;
+}
 
 #formulario {
     color: rgba(255, 0, 149, 0.8);
@@ -99,7 +103,15 @@ h1 {
     height: 50px;
 }
 
-
+.boton_juegos{
+    line-height: 100px;
+    padding: 4px 25px;
+    background:rgba(255, 0, 149, 0.8);
+    border:rgba(162, 16, 111, 0.8);
+    color: #fff;
+    border-radius: 4px;
+    text-decoration:none;
+}
 
 
 /* @media screen and (prefers-color-scheme: dark) {
