@@ -4,6 +4,7 @@ document.addEventListener("deviceready", listo, false);
 let perfiles;
 var colorDeFondo;
 let fondo = document.getElementById("main");
+
 function cargarUsuarios() {
   perfiles = Storage.cargar("perfiles") || [];
   console.log(perfiles);
@@ -132,6 +133,8 @@ function esTaTeTiDiagonal(jugador) {
   );
 }
 
+// COMO PONER EL NOMBRE DEL JUGADOR GANADOR //
+
 function juegoGanador() {
   alert("JUGADOR" + juego.turnos + "GANO");
 }
@@ -141,7 +144,7 @@ function terminado() {
   if (juego.ganador !== 0) {
     msg = "Ganó el jugador " + juego.ganador;
   }
-  document.querySelector("#juego-terminado .mensaje").innerHTML = msg;
+  document.querySelector("#juego-terminado.mensaje").innerHTML = msg;
   document.getElementById("juego-terminado").classList.remove("nodisp");
 }
 
