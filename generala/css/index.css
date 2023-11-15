@@ -54,7 +54,7 @@ h1 {
 /* tendria que ser del color del usuario correspondiente */
 .turnoActual {
 
-    background-color: black;
+    background-color: rgb(40, 115, 190);
 }
 
 #modal {
