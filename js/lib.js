@@ -57,3 +57,23 @@ const utils = {
         return true;
     }
 }
+
+function mostrarPopup(mensaje) {
+    document.getElementById("popup-texto").textContent = mensaje;
+    document.getElementById("popup").style.display = "block";
+  }
+  
+  function cerrarPopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    // Agregar un evento de clic al botón "3er Juego"
+    document.getElementById("boton-3er-juego").addEventListener("click", function (event) {
+      // Evitar el comportamiento predeterminado del enlace
+      event.preventDefault();
+      // Mostrar el popup
+      mostrarPopup("Este Juego va a estar disponible más adelante, ¡Mil disculpas!");
+    });
+  });
+  
