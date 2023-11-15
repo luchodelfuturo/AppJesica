@@ -1,5 +1,6 @@
 // document.addEventListener("deviceready", onDeviceReady, false);
 
+
 const cantJugadores = 2;
 
 let perfiles = [];
