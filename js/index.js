@@ -39,3 +39,22 @@ function onDeviceReady() {
         window.location.href = "menu.html"
     }
 }
+
+// document.addEventListener('deviceready', onDeviceReady, false);
+
+// const cantJugadores = 2;
+
+// function onDeviceReady() {
+//     let perfiles = Storage.cargar("perfiles");
+
+//     if (perfiles === null || perfiles.length === 0) {
+//         // No hay perfiles, redirige a la página de creación de perfiles
+//         window.location.href = "crear_perfil.html";
+//     } else if (perfiles.length < cantJugadores) {
+//         // Redirige a la página de perfil correspondiente si hay espacio para más jugadores
+//         window.location.href = "perfil.html?player=" + perfiles.length;
+//     } else {
+//         // Hay suficientes perfiles, redirige al menú
+//         window.location.href = "menu.html";
+//     }
+// }
