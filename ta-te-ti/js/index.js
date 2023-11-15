@@ -135,17 +135,18 @@ function esTaTeTiDiagonal(jugador) {
 // COMO PONER EL NOMBRE DEL JUGADOR GANADOR
 
 function juegoGanador() {
-  alert("JUGADOR" + juego.turnos + "GANO");
+  alert("Jugador " + perfiles[juego.ganador - 1].nombre + " ganó");
 }
 
 function terminado() {
   let msg = "Empate";
   if (juego.ganador !== 0) {
-    msg = "Ganó el jugador " + juego.ganador;
+    msg = "Ganó el jugador " + perfiles[juego.ganador - 1].nombre;
   }
   document.querySelector("#juego-terminado .mensaje").innerHTML = msg;
   document.getElementById("juego-terminado").classList.remove("nodisp");
 }
+
 
 function listo() {
   console.log("Running cordova-" + cordova.platformId + "@" + cordova.version);
