@@ -58,6 +58,8 @@ const utils = {
     }
 }
 
+// BTN 3ER JUEGO --> POPUP // 
+
 function mostrarPopup(mensaje) {
     document.getElementById("popup-texto").textContent = mensaje;
     document.getElementById("popup").style.display = "block";
@@ -74,6 +76,26 @@ function mostrarPopup(mensaje) {
       event.preventDefault();
       // Mostrar el popup
       mostrarPopup("Este Juego va a estar disponible más adelante, ¡Mil disculpas!");
+    });
+  });
+
+  //BTN PUNTAJE //
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    // Agregar un evento de clic al botón "3er Juego"
+    document.getElementById("boton-3er-juego").addEventListener("click", function (event) {
+      // Evitar el comportamiento predeterminado del enlace
+      event.preventDefault();
+      // Mostrar el popup con un mensaje personalizado
+      mostrarPopup("Este Juego va a estar disponible más adelante, ¡Mil disculpas!");
+    });
+  
+    // Agregar un evento de clic al botón "Puntajes"
+    document.getElementById("botonPuntaje").addEventListener("click", function (event) {
+      // Evitar el comportamiento predeterminado del enlace
+      event.preventDefault();
+      // Mostrar el popup con un mensaje personalizado
+      mostrarPopup('FUNCION NO HABILITADA, ¡MIL DISCULPAS!');
     });
   });
   
