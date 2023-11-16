@@ -184,7 +184,7 @@ font-weight: 800;
     cursor: pointer;
   }
   
-  #botonPuntaje{
+  #botonPuntaje, .boton-empezar{
   font-weight: 800;
   width: 100px;
   line-height: 25px;
@@ -196,6 +196,8 @@ font-weight: 800;
   text-decoration: none !important;
   margin: 10px 0;
   }
+
+
 
   .boton_juegos,
 #botonPuntaje {
