@@ -6,7 +6,9 @@ var colorDeFondo;
 let fondo = document.getElementById("main");
 function cargarUsuarios() {
   perfiles = Storage.cargar("perfiles") || [];
+  let puntajes2 = Storage.cargar("puntajes") || [];
   console.log(perfiles);
+  console.log(puntajes2, "pntjs2");
   colorDeFondo = perfiles[juego.turnos - 1].color;
   fondo.style.backgroundColor = colorDeFondo;
   document.getElementById("turnosName").textContent =
@@ -139,14 +141,24 @@ function juegoGanador() {
 }
 
 function terminado() {
+  let puntajes = JSON.parse(localStorage.getItem("puntajes")) || {
+    jugador1: { tateti: 0, generala: 0, tercerGame: 0 },
+    jugador2: { tateti: 0, generala: 0, tercerGame: 0 },
+  };
   let msg = "Empate";
   if (juego.ganador !== 0) {
     msg = "Ganó el jugador " + perfiles[juego.ganador - 1].nombre;
+    if (juego.ganador - 1 == 0) {
+      puntajes.jugador1.tateti = puntajes.jugador1.tateti + 10;
+    } else {
+      puntajes.jugador2.tateti = puntajes.jugador2.tateti + 10;
+    }
+    console.log("Puntajes antes de subir, ", puntajes);
+    localStorage.setItem("puntajes", JSON.stringify(puntajes));
   }
   document.querySelector("#juego-terminado .mensaje").innerHTML = msg;
   document.getElementById("juego-terminado").classList.remove("nodisp");
 }
-
 
 function listo() {
   console.log("Running cordova-" + cordova.platformId + "@" + cordova.version);

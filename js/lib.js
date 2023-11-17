@@ -1,90 +1,90 @@
 const Storage = {
+  cargar: (key) => {
+    try {
+      return JSON.parse(localStorage.getItem(key));
+    } catch (x) {
+      console.error("No se pudo leer el item" + key + ". Error: " + x);
 
-    cargar: key => {
-
-        try {
-
-            return JSON.parse(localStorage.getItem(key));
-
-        } catch (x) {
-
-            console.error("No se pudo leer el item" + key + ". Error: " + x);
-
-            return null;
-        }
-    },
-
-    guardar: (key, obj) => {
-
-        localStorage.setItem(key, JSON.stringify(obj)) //stringify: te convierte un objeto en string
-    },
-
-    borrar: key => {
-
-        localStorage.removeItem(key);
-    },
-
-    limpiar: () => {
-
-        localStorage.clear();
+      return null;
     }
-}
+  },
+
+  guardar: (key, obj) => {
+    localStorage.setItem(key, JSON.stringify(obj)); //stringify: te convierte un objeto en string
+  },
+
+  borrar: (key) => {
+    localStorage.removeItem(key);
+  },
+
+  limpiar: () => {
+    localStorage.clear();
+  },
+};
 
 const utils = {
+  validarCamposDeTexto: (campos, longMin, funcValidacion) => {
+    for (const campo of campos) {
+      const el = document.getElementById(campo);
 
-    validarCamposDeTexto : (campos, longMin, funcValidacion) => {
+      const valor = el.value;
 
-    for (const campo of campos){
+      if (valor.length < longMin || !funcValidacion(campo, valor)) {
+        el.classList.add("notValid");
 
-        const el = document.getElementById(campo);
+        el.focus();
 
-        const valor = el.value;
-
-        if (valor. length < longMin || !funcValidacion(campo, valor)) {
-           
-                el.classList.add ("notValid");
-
-                el.focus();
-
-            return false;
-
-            } else {
-
-                el.classList.remove("notValid");
-            }
-        }
-
-        return true;
+        return false;
+      } else {
+        el.classList.remove("notValid");
+      }
     }
-}
 
-// BTN 3ER JUEGO --> POPUP // 
+    return true;
+  },
+};
+
+// BTN 3ER JUEGO --> POPUP //
 
 function mostrarPopup(mensaje) {
-    document.getElementById("popup-texto").textContent = mensaje;
-    document.getElementById("popup").style.display = "block";
-  }
-  
-  function cerrarPopup() {
-    document.getElementById("popup").style.display = "none";
-  }
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    // Agregar un evento de clic al botón "3er Juego"
-    const btn3 = document.getElementById("boton-3er-juego");
-    if (btn3){
-        btn3.addEventListener("click", function (event) {
-      
-            event.preventDefault();
-        
-            mostrarPopup("Este Juego va a estar disponible más adelante, ¡Mil disculpas!");
-          });
-    }
-  
-  });
+  document.getElementById("popup-texto").textContent = mensaje;
+  document.getElementById("popup").style.display = "block";
+}
+function mostrarPopupPuntos() {
+  document.getElementById("popupPuntos").style.display = "block";
+}
 
-  //BTN PUNTAJE //
-  
+function cerrarPopup() {
+  document.getElementById("popup").style.display = "none";
+}
+function cerrarPopUpPuntos() {
+  document.getElementById("popupPuntos").style.display = "none";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Agregar un evento de clic al botón "3er Juego"
+  const btn3 = document.getElementById("boton-3er-juego");
+  const btnPuntos = document.getElementById("botonPuntos");
+  if (btn3) {
+    btn3.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      mostrarPopup(
+        "Este Juego va a estar disponible más adelante, ¡Mil disculpas!"
+      );
+    });
+  }
+
+  if (btnPuntos) {
+    btnPuntos.addEventListener("click", function (event) {
+      event.preventDefault();
+      mostrarPopupPuntos();
+    });
+  }
+});
+
+//BTN PUNTAJE //
+
 //   document.addEventListener("DOMContentLoaded", function () {
 //     // Agregar un evento de clic al botón "3er Juego"
 //     document.getElementById("boton-3er-juego").addEventListener("click", function (event) {
@@ -93,7 +93,7 @@ function mostrarPopup(mensaje) {
 //       // Mostrar el popup con un mensaje personalizado
 //       mostrarPopup("Este Juego va a estar disponible más adelante, ¡Mil disculpas!");
 //     });
-  
+
 //     // Agregar un evento de clic al botón "Puntajes"
 //     document.getElementById("botonPuntaje").addEventListener("click", function (event) {
 //       // Evitar el comportamiento predeterminado del enlace
@@ -102,4 +102,3 @@ function mostrarPopup(mensaje) {
 //       mostrarPopup('FUNCION NO HABILITADA, ¡MIL DISCULPAS!');
 //     });
 //   });
-  

@@ -1,137 +1,122 @@
-
-
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    user-select: none;
-    background-color:#E4E4E4;
-    background-image:linear-gradient(to bottom, #cfffc5 0%, #abf678 51%);
-    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
-    font-size:16px;
-    height:100vh;
-    margin:0px;
-    padding:0px;
-    /* Padding to avoid the "unsafe" areas behind notches in the screen */
-    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
-    width:100%;
+  -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+  user-select: none;
+  background-color: #e4e4e4;
+  background-image: linear-gradient(to bottom, #cfffc5 0%, #abf678 51%);
+  font-family: system-ui, -apple-system, -apple-system-font, "Segoe UI",
+    "Roboto", sans-serif;
+  font-size: 16px;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  /* Padding to avoid the "unsafe" areas behind notches in the screen */
+  padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px)
+    env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+  width: 100%;
+  display: relative;
 }
 
 /* Portrait layout (default) */
 .app {
-
-    width: 100%;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
 
 h1 {
-   text-align: center;
-   color: rgba(255, 0, 149, 0.8);
+  text-align: center;
+  color: rgba(255, 0, 149, 0.8);
 }
 
-
-.dado
-{
-
-    border: 2px solid transparent;
-
+.dado {
+  border: 2px solid transparent;
 }
 
-.dado.seleccionado 
-{
-
-    border: 2px solid rgba(255, 0, 149, 0.8);
-
+.dado.seleccionado {
+  border: 2px solid rgba(255, 0, 149, 0.8);
 }
 
 /* tendria que ser del color del usuario correspondiente */
 .turnoActual {
-
-    background-color: rgb(40, 115, 190);
+  background-color: rgb(40, 115, 190);
 }
 
 #modal {
-
-    background-color: rgba(255, 0, 149, 0.8);
-    border-radius: 1em;
-    color: white;
-    text-align: center;
-    padding: 5px 10px;
-    margin: auto;
+  background-color: rgba(255, 0, 149, 0.8);
+  border-radius: 1em;
+  color: white;
+  text-align: center;
+  padding: 5px 10px;
+  margin: auto;
+  display: absolute;
+  top: 50;
+  left: 20;
+  z-index: 30;
 }
 
 button {
-
-    font-weight: 800;
-    width: 82px;
-    line-height: 20px;
-    line-height: 2;
-    padding: 1px;
-    background: rgba(255, 0, 149, 0.8);
-    border: rgba(162, 16, 111, 0.8);
-    color: #fff;
-    border-radius: 20px;
-    text-decoration: none;
-    margin: 20px 0;
+  font-weight: 800;
+  width: 82px;
+  line-height: 20px;
+  line-height: 2;
+  padding: 1px;
+  background: rgba(255, 0, 149, 0.8);
+  border: rgba(162, 16, 111, 0.8);
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  margin: 20px 0;
 }
 
-
-#modal p{
-
-    padding: 0,25rem;
-    
+#modal p {
+  padding: 0, 25rem;
 }
 
 .nodisp {
-
-    display: none;
+  display: none;
 }
 
 #modal2 {
-
-    background-color:  rgba(255, 0, 149, 0.8);
-    border-radius: 1em;
-    padding: 5px 10px;
-    margin: auto;
+  background-color: rgba(255, 0, 149, 0.8);
+  border-radius: 1em;
+  padding: 5px 10px;
+  margin: auto;
+  display: absolute;
+  top: 10;
 }
 
-#modal2 h2{
+#modal2 h2 {
+  background-color: rgba(255, 0, 149, 0.8);
 
-    background-color:  rgba(255, 0, 149, 0.8);
-
-    border-radius: 0,2em;
-
+  border-radius: 0, 2em;
 }
 
-#modal2 p{
-
-    padding: 0,25rem;
+#modal2 p {
+  padding: 0, 25rem;
 }
-
 
 @media screen and (prefers-color-scheme: dark) {
-    body {
-        background-image:linear-gradient(to bottom, #cfffc5 0%, #abf678 51%);
-    }
+  body {
+    background-image: linear-gradient(to bottom, #cfffc5 0%, #abf678 51%);
+  }
 }
 
-.boton_juegos{
-    font-weight: 800;
-    width: 82px;
-    line-height: 20px;
-    line-height: 2;
-    padding: 1px;
-    background: rgba(255, 0, 149, 0.8);
-    border: rgba(162, 16, 111, 0.8);
-    color: #fff;
-    border-radius: 20px;
-    text-decoration: none;
-    margin: 20px 0;
-    }
+.boton_juegos {
+  font-weight: 800;
+  width: 82px;
+  line-height: 20px;
+  line-height: 2;
+  padding: 1px;
+  background: rgba(255, 0, 149, 0.8);
+  border: rgba(162, 16, 111, 0.8);
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  margin: 20px 0;
+}

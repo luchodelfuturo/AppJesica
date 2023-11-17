@@ -110,7 +110,7 @@ function dibujarTablaPuntos() {
   const trEncabezado = document.querySelector("#puntajes thead tr");
 
   trEncabezado.innerHTML = "<th>Juego</th>";
- 
+
   for (let i = 0; i < game.cantJugadores; i++) {
     const thJugador = document.createElement("th");
 
@@ -417,14 +417,37 @@ function esFull(dados) {
 
 function gameOver() {
   let mensaje = "";
-
+  let puntajes = JSON.parse(localStorage.getItem("puntajes")) || {
+    jugador1: { tateti: 0, generala: 0, tercerGame: 0 },
+    jugador2: { tateti: 0, generala: 0, tercerGame: 0 },
+  };
   const totales = game.puntos["T"];
 
   if (allEqual(totales)) {
     mensaje += "Empate";
   } else {
+    const jugador = totales.indexOf(Math.max(...totales)) + 1;
     mensaje += "Gano J" + (totales.indexOf(Math.max(...totales)) + 1);
-    //localStorage.setItem("puntos",Objeto)
+    console.log(mensaje);
+    if (jugador == 1) {
+      puntajes = {
+        ...puntajes,
+        jugador1: {
+          ...puntajes.jugador1,
+          generala: puntajes.jugador1.generala + 10,
+        },
+      };
+    } else {
+      puntajes = {
+        ...puntajes,
+        jugador2: {
+          ...puntajes.jugador2,
+          generala: puntajes.jugador2.generala + 10,
+        },
+      };
+    }
+
+    localStorage.setItem("puntajes", JSON.stringify(puntajes));
   }
 
   document.getElementById("tirarDados").setAttribute("disabled", "disabled");

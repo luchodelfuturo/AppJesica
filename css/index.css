@@ -17,9 +17,6 @@ body {
   text-transform: uppercase;
   flex-direction: column;
   display: flex;
-  
-
-
 }
 
 /* Portrait layout (default) */
@@ -51,9 +48,8 @@ ul {
   margin: 0;
 }
 
-li{
+li {
   margin-bottom: 10px;
-
 }
 
 #formulario {
@@ -69,7 +65,6 @@ li{
   font-weight: bolder;
   font-size: 25px;
   padding: 10px;
-
 }
 
 #formulario input {
@@ -125,8 +120,8 @@ li{
   height: 50px;
 }
 
-.boton_juegos{
-font-weight: 800;
+.boton_juegos {
+  font-weight: 800;
   width: 200px;
   line-height: 50px;
   padding: 4px 25px;
@@ -138,68 +133,75 @@ font-weight: 800;
   display: block;
   text-align: center;
   margin: 20px auto;
-
 }
 
-#btn-guardar-perfil{
-    font-weight: 800;
-    width: 100px;
-    padding: 4px 25px;
-    background: rgba(255, 0, 149, 0.8);
-    border: rgba(162, 16, 111, 0.8);
-    color: #fff;
-    border-radius: 20px;
+#btn-guardar-perfil {
+  font-weight: 800;
+  width: 100px;
+  padding: 4px 25px;
+  background: rgba(255, 0, 149, 0.8);
+  border: rgba(162, 16, 111, 0.8);
+  color: #fff;
+  border-radius: 20px;
 
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: white;
-  }
-  
-  .popup-contenido {    
-    font: small-caption;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 160, 215, 0.8);
-    padding: 10px;
-    max-width: 300px;
-    border-radius: 5px;
-    color: white;
-  }
-  
-  .cerrar {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  #botonPuntaje, .boton-empezar{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+.popupPuntos {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 80vh;
+  color: white;
+}
+
+.popup-contenido {
+  font: small-caption;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 160, 215, 0.8);
+  padding: 10px;
+  max-width: 300px;
+  border-radius: 5px;
+  color: white;
+}
+
+.cerrar {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#botonPuntaje,
+.boton-empezar {
   font-weight: 800;
   width: 100px;
   line-height: 25px;
   padding: 2px 12px;
-  background:#50df74;
+  background: #50df74;
   border: rgba(162, 16, 111, 0.8);
   color: #fff;
   border-radius: 10px;
 
   margin: 10px 0;
-  }
-
+}
 
 a {
   text-decoration: none !important;
-
 }

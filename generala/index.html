@@ -17,31 +17,12 @@
     <title>Generala</title>
   </head>
   <body onload="cargarUsuarios()">
-    <div class="app">
+    <div class="app" style="display: relative">
       <h1>Generala</h1>
 
       <a href="../menu.html"><button class="boton_juegos">Salir</button></a>
 
       <div id="dados"></div>
-
-      <table id="puntajes">
-        <thead>
-          <tr>
-            <th>Juego</th>
-          </tr>
-        </thead>
-
-        <tbody></tbody>
-      </table>
-
-      <div id="tiros">Tiros: <span></span></div>
-
-      <div>
-        <button id="tirarDados" onclick="tirar();">¡Tirar!</button>
-
-        <button id="mostrarTabla" onclick="initGame();">Reiniciar</button>
-      </div>
-
       <div id="modal" class="nodisp">
         <h2>Titulo</h2>
 
@@ -62,6 +43,23 @@
         <button onclick="confirmAceptado();">Si</button>
 
         <button onclick="confirmRechazado();">No</button>
+      </div>
+      <table id="puntajes">
+        <thead>
+          <tr>
+            <th>Juego</th>
+          </tr>
+        </thead>
+
+        <tbody></tbody>
+      </table>
+
+      <div id="tiros">Tiros: <span></span></div>
+
+      <div>
+        <button id="tirarDados" onclick="tirar();">¡Tirar!</button>
+
+        <button id="mostrarTabla" onclick="initGame();">Reiniciar</button>
       </div>
     </div>
 
