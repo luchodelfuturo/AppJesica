@@ -71,12 +71,16 @@ function mostrarPopup(mensaje) {
   
   document.addEventListener("DOMContentLoaded", function () {
     // Agregar un evento de clic al botón "3er Juego"
-    document.getElementById("boton-3er-juego").addEventListener("click", function (event) {
-      // Evitar el comportamiento predeterminado del enlace
-      event.preventDefault();
-      // Mostrar el popup
-      mostrarPopup("Este Juego va a estar disponible más adelante, ¡Mil disculpas!");
-    });
+    const btn3 = document.getElementById("boton-3er-juego");
+    if (btn3){
+        btn3.addEventListener("click", function (event) {
+      
+            event.preventDefault();
+        
+            mostrarPopup("Este Juego va a estar disponible más adelante, ¡Mil disculpas!");
+          });
+    }
+  
   });
 
   //BTN PUNTAJE //

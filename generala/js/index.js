@@ -196,11 +196,11 @@ function anotarPuntaje(queJuego) {
   }
 }
 
-console.info(
-  "Anotar juego " + queJuego + " para el jugador J" + (game.turno + 1)
-);
+// console.info(
+//   "Anotar juego " + queJuego + " para el jugador J" + (game.turno + 1)
+// );
 
-console.info(calcularPuntaje(queJuego));
+// console.info(calcularPuntaje(queJuego));
 
 function calcularPuntaje(queJuego) {
   const dadosCopia = copyArray(game.dados).sort();
