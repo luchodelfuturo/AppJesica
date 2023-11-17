@@ -102,3 +102,42 @@ document.addEventListener("DOMContentLoaded", function () {
 //       mostrarPopup('FUNCION NO HABILITADA, ¡MIL DISCULPAS!');
 //     });
 //   });
+
+
+// PUNTAJES - TABLA 
+let puntajes = JSON.parse(localStorage.getItem("puntajes")) || {
+  jugador1: { tateti: 0, generala: 0, tercerGame: 0 },
+  jugador2: { tateti: 0, generala: 0, tercerGame: 0 },
+};
+let perfiles = JSON.parse(localStorage.getItem("perfiles")) || [];
+
+// Crear una tabla
+let tabla = document.createElement("table");
+
+// Añadir la primera fila vacía y los nombres de los juegos
+let thead = tabla.createTHead();
+let headerRow = thead.insertRow();
+headerRow.insertCell(); // Celda vacía
+Object.keys(puntajes.jugador1).forEach((juego) => {
+  let th = document.createElement("th");
+  th.appendChild(document.createTextNode(juego[0]));
+  headerRow.appendChild(th);
+});
+
+// Añadir filas para cada jugador
+let tbody = tabla.createTBody();
+Object.keys(puntajes).forEach((jugador, index) => {
+  let row = tbody.insertRow();
+  let cellJugador = row.insertCell();
+  cellJugador.appendChild(
+    document.createTextNode(perfiles[index].nombre)
+  );
+
+  Object.values(puntajes[jugador]).forEach((puntaje) => {
+    let cell = row.insertCell();
+    cell.appendChild(document.createTextNode(puntaje));
+  });
+});
+
+// Añadir la tabla al DOM
+document.getElementById("tabla-puntajes").appendChild(tabla);

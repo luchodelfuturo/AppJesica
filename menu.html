@@ -7,25 +7,7 @@
     <title>3 Juegos</title>
 
     <style>
-      /* Estilos básicos para la tabla */
-      table {
-        border-collapse: collapse;
-        width: 90%;
-        margin: auto;
-        font-size: 0.8em; /* Tamaño de fuente más pequeño para móviles */
-      }
-      th,
-      td {
-        border: 1px solid black;
-        text-align: left;
-        padding: 8px;
-      }
-      /* Estilos para la primera fila y columna vacía */
-      th:first-child,
-      td:first-child {
-        border: none;
-        background-color: #f0f0f0;
-      }
+     
     </style>
   </head>
   <body>
@@ -85,46 +67,6 @@
       </table>
       <span class="cerrar" onclick="cerrarPopup(2)">&times;</span>
     </div>
-
-    <script>
-      // Suponiendo que los datos ya están almacenados en localStorage
-      let puntajes = JSON.parse(localStorage.getItem("puntajes")) || {
-        jugador1: { tateti: 0, generala: 0, tercerGame: 0 },
-        jugador2: { tateti: 0, generala: 0, tercerGame: 0 },
-      };
-      let perfiles = JSON.parse(localStorage.getItem("perfiles")) || [];
-
-      // Crear una tabla
-      let tabla = document.createElement("table");
-
-      // Añadir la primera fila vacía y los nombres de los juegos
-      let thead = tabla.createTHead();
-      let headerRow = thead.insertRow();
-      headerRow.insertCell(); // Celda vacía
-      Object.keys(puntajes.jugador1).forEach((juego) => {
-        let th = document.createElement("th");
-        th.appendChild(document.createTextNode(juego[0]));
-        headerRow.appendChild(th);
-      });
-
-      // Añadir filas para cada jugador
-      let tbody = tabla.createTBody();
-      Object.keys(puntajes).forEach((jugador, index) => {
-        let row = tbody.insertRow();
-        let cellJugador = row.insertCell();
-        cellJugador.appendChild(
-          document.createTextNode(perfiles[index].nombre)
-        );
-
-        Object.values(puntajes[jugador]).forEach((puntaje) => {
-          let cell = row.insertCell();
-          cell.appendChild(document.createTextNode(puntaje));
-        });
-      });
-
-      // Añadir la tabla al DOM
-      document.getElementById("tabla-puntajes").appendChild(tabla);
-    </script>
 
     <script src="js/lib.js"></script>
   </body>

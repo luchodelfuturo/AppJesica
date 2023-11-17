@@ -205,3 +205,24 @@ li {
 a {
   text-decoration: none !important;
 }
+
+ /* Estilos básicos para la tabla */
+ table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: auto;
+  font-size: 0.8em; /* Tamaño de fuente más pequeño para móviles */
+}
+th,
+td {
+  border: 1px solid rgba(255, 0, 149, 0.8);
+  text-align: center;
+  width: 90px;
+  padding: 8px;
+}
+/* Estilos para la primera fila y columna vacía */
+th:first-child,
+td:first-child {
+  border: none;
+  border: 1px solid rgba(255, 0, 149, 0.8);
+      }
