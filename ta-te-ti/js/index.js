@@ -4,15 +4,25 @@ document.addEventListener("deviceready", listo, false);
 let perfiles;
 var colorDeFondo;
 let fondo = document.getElementById("main");
+let tablaTateti = document.getElementById("ta-te-ti");
 function cargarUsuarios() {
   perfiles = Storage.cargar("perfiles") || [];
   let puntajes2 = Storage.cargar("puntajes") || [];
   console.log(perfiles);
   console.log(puntajes2, "pntjs2");
-  colorDeFondo = perfiles[juego.turnos - 1].color;
-  fondo.style.backgroundColor = colorDeFondo;
+  colorJugadores(perfiles);
+
   document.getElementById("turnosName").textContent =
     perfiles[juego.turnos - 1].nombre;
+}
+function colorJugadores(perfiles) {
+  colorDeFondo = perfiles[juego.turnos - 1].color;
+  tablaTateti.style.border = "6px solid " + colorDeFondo;
+  var celdas = document.querySelectorAll("#ta-te-ti td");
+  celdas.forEach(function (td) {
+    td.style.border = "4px solid " + colorDeFondo;
+    td.style.color = colorDeFondo;
+  });
 }
 
 let juego = {
@@ -25,7 +35,6 @@ let juego = {
   turnos: tirarMoneda(),
   ganador: 0,
 };
-document.getElementById("turnos").innerHTML = juego.turnos;
 
 function empezarJuego() {
   juego = {
@@ -51,7 +60,6 @@ function hacerTabla() {
   console.log("perfiles", perfiles);
 
   const cont = document.querySelector("#ta-te-ti tbody");
-  document.getElementById("turnos").innerHTML = juego.turnos;
   document.getElementById("turnosName").textContent =
     perfiles[juego.turnos - 1].nombre;
   for (let r = 0; r < 3; r++) {
@@ -64,22 +72,31 @@ function hacerTabla() {
 }
 
 function jugar(r, c) {
-  colorDeFondo = perfiles[juego.turnos - 1].color;
-  fondo.style.backgroundColor = colorDeFondo;
+  console.log("click");
+  colorJugadores(perfiles);
+  console.log(perfiles);
+  let inicial1 = perfiles[0].apodo;
+  let inicial2 = perfiles[1].apodo;
   if (juego.jugadas < 9) {
     if (juego.tabla[r][c] === "&nbsp;") {
-      juego.tabla[r][c] = juego.turnos === 1 ? "x" : "0";
+      juego.tabla[r][c] = juego.turnos === 1 ? inicial1 : inicial2;
+
+      colorJugadores(perfiles);
       hacerTabla();
+
       if (esTaTeTi(juego.tabla[r][c])) {
         juego.ganador = juego.turnos;
         juego.jugadas = 9;
+        juego.turnos = juego.turnos === 1 ? 2 : 1;
         terminado();
       } else {
         juego.jugadas++;
+        juego.turnos = juego.turnos === 1 ? 2 : 1;
+        hacerTabla();
         if (juego.jugadas === 9) {
           terminado();
         }
-        juego.turnos = juego.turnos === 1 ? 2 : 1;
+        // juego.turnos = juego.turnos === 1 ? 2 : 1;
       }
     }
   } else {
@@ -147,7 +164,7 @@ function terminado() {
   };
   let msg = "Empate";
   if (juego.ganador !== 0) {
-    msg = "Ganó el jugador " + perfiles[juego.ganador - 1].nombre;
+    msg = "Ganó: " + perfiles[juego.ganador - 1].nombre;
     if (juego.ganador - 1 == 0) {
       puntajes.jugador1.tateti = puntajes.jugador1.tateti + 10;
     } else {
@@ -158,6 +175,7 @@ function terminado() {
   }
   document.querySelector("#juego-terminado .mensaje").innerHTML = msg;
   document.getElementById("juego-terminado").classList.remove("nodisp");
+  document.getElementById("juego-terminado").style.display = "flex";
 }
 
 function listo() {
