@@ -206,8 +206,8 @@ a {
   text-decoration: none !important;
 }
 
- /* Estilos básicos para la tabla */
- table {
+/* Estilos básicos para la tabla */
+table {
   border-collapse: collapse;
   width: 90%;
   margin: auto;
@@ -225,5 +225,42 @@ th:first-child,
 td:first-child {
   border: none;
   border: 1px solid rgba(255, 0, 149, 0.8);
-      }
-      
+}
+
+/* Estilo del modal (debería estar oculto inicialmente) */
+.modal {
+  display: none; /* Ocultar el modal por defecto */
+  position: fixed; /* Mantenerlo fijo en pantalla */
+  z-index: 1; /* Situarlo sobre otros elementos */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  overflow: auto; /* Habilitar scroll si es necesario */
+  background-color: rgb(0, 0, 0); /* Color de fondo con opacidad */
+  background-color: rgba(0, 0, 0, 0.4); /* Negro con opacidad */
+}
+
+/* Estilo del contenido del modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% desde la parte superior y centrado horizontalmente */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Ancho del contenido */
+}
+
+/* Estilo del botón para cerrar el modal */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

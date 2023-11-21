@@ -83,41 +83,72 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Función para crear la tabla de puntajes
+function crearTabla() {
+  let puntajes = JSON.parse(localStorage.getItem("puntajes")) || {
+    jugador1: { tateti: 0, generala: 0, tercerGame: 0 },
+    jugador2: { tateti: 0, generala: 0, tercerGame: 0 },
+  };
+  let perfiles2 = JSON.parse(localStorage.getItem("perfiles")) || [];
 
-// PUNTAJES - TABLA 
-let puntajes = JSON.parse(localStorage.getItem("puntajes")) || {
-  jugador1: { tateti: 0, generala: 0, tercerGame: 0 },
-  jugador2: { tateti: 0, generala: 0, tercerGame: 0 },
-};
-let perfiles2 = JSON.parse(localStorage.getItem("perfiles")) || [];
+  // Crear una tabla
+  let tabla = document.createElement("table");
 
-// Crear una tabla
-let tabla = document.createElement("table");
+  // Añadir la primera fila vacía y los nombres de los jugadores
+  let thead = tabla.createTHead();
+  let headerRow = thead.insertRow();
+  headerRow.insertCell(); // Celda vacía para la esquina superior izquierda
 
-// Añadir la primera fila vacía y los nombres de los juegos
-let thead = tabla.createTHead();
-let headerRow = thead.insertRow();
-headerRow.insertCell(); // Celda vacía
-Object.keys(puntajes.jugador1).forEach((juego) => {
-  let th = document.createElement("th");
-  th.appendChild(document.createTextNode(juego[0]));
-  headerRow.appendChild(th);
-});
-
-// Añadir filas para cada jugador
-let tbody = tabla.createTBody();
-Object.keys(puntajes).forEach((jugador, index) => {
-  let row = tbody.insertRow();
-  let cellJugador = row.insertCell();
-  cellJugador.appendChild(
-    document.createTextNode(perfiles2[index].nombre)
-  );
-
-  Object.values(puntajes[jugador]).forEach((puntaje) => {
-    let cell = row.insertCell();
-    cell.appendChild(document.createTextNode(puntaje));
+  perfiles2.forEach((jugador, jugadorIndex) => {
+    let th = document.createElement("th");
+    th.appendChild(document.createTextNode(jugador.nombre));
+    headerRow.appendChild(th);
   });
-});
 
-// Añadir la tabla al DOM
-document.getElementById("tabla-puntajes").appendChild(tabla);
+  // Añadir filas para cada juego
+  let tbody = tabla.createTBody();
+  Object.keys(puntajes.jugador1).forEach((juego) => {
+    let row = tbody.insertRow();
+    let cellNombreJuego = row.insertCell();
+    cellNombreJuego.appendChild(document.createTextNode(juego)); // Nombre completo del juego
+
+    perfiles2.forEach((perfil) => {
+      let cellPuntaje = row.insertCell();
+      let jugadorKey = `jugador${perfiles2.indexOf(perfil) + 1}`;
+      let puntaje = puntajes[jugadorKey][juego]; // Acceder al puntaje usando jugadorKey y el nombre del juego
+      cellPuntaje.appendChild(document.createTextNode(puntaje));
+    });
+  });
+
+  // Vaciar el contenedor de la tabla y añadir la nueva tabla
+  let contenedorTabla = document.getElementById("tabla-puntajes");
+  contenedorTabla.innerHTML = ""; // Limpiar el contenedor
+  contenedorTabla.appendChild(tabla); // Añadir la nueva tabla
+}
+
+// Obtener el botón que abre el modal
+let btnPuntos = document.getElementById("botonPuntos");
+
+// Obtener el modal
+let modal = document.getElementById("modalPuntos");
+
+// Obtener el elemento <span> que cierra el modal
+let span = document.getElementsByClassName("close")[0];
+
+// Cuando el usuario hace clic en el botón, muestra el modal
+btnPuntos.onclick = function () {
+  modal.style.display = "block";
+  crearTabla(); // Llamar a la función para crear la tabla
+};
+
+// Cuando el usuario hace clic en <span> (x), cierra el modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+// Cuando el usuario hace clic fuera del modal, ciérralo
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};

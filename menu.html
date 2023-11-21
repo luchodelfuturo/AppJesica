@@ -6,9 +6,7 @@
     <link rel="stylesheet" href="css/index.css" />
     <title>3 Juegos</title>
 
-    <style>
-     
-    </style>
+    <style></style>
   </head>
   <body>
     <div class="app">
@@ -48,7 +46,7 @@
           <button id="botonPuntaje">perfil 2</button></a
         >
       </div>
-      <div id="tabla-puntajes" style="width: 400px"></div>
+      <!-- <div id="tabla-puntajes" style="width: 400px"></div> -->
     </div>
     <!-- Popup -->
     <div id="popup" class="popup">
@@ -58,16 +56,15 @@
       </div>
     </div>
 
-    <div id="popupPuntos" class="popupPuntos">
-      <table id="puntos">
-        <thead>
-          <tr></tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-      <span class="cerrar" onclick="cerrarPopup(2)">&times;</span>
+    <div id="modalPuntos" class="modal">
+      <!-- Contenido del Modal -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Puntajes</h2>
+        <!-- La tabla se insertará aquí -->
+        <div id="tabla-puntajes"></div>
+      </div>
     </div>
-
 
     <script src="js/lib.js"></script>
   </body>
