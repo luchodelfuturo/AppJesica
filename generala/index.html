@@ -18,20 +18,47 @@
   </head>
   <body onload="cargarUsuarios()">
     <div class="app" style="display: relative">
-     
       <div class="header">
-     
-        <h1>Generala</h1> 
-      <div id="enlace-volver">
-     
-        <a href="../menu.html">
-        <img src="img/volver (1).png" alt="Salir" class="boton_juegos">
-     
-      </a>
-    </div>
-    </div>
+        <h1>Generala</h1>
+        <div id="enlace-volver">
+          <a href="../menu.html">
+            <img src="img/volver (1).png" alt="Salir" class="boton_juegos" />
+          </a>
+        </div>
+      </div>
 
-      <div id="dados"></div>
+      <div
+        class="contenedorJuego"
+        style="
+          display: flex;
+          width: 90%;
+          padding: 0 50px;
+          margin: auto;
+          height: 80vh;
+        "
+      >
+        <div id="dados" class="area-dados"></div>
+
+        <div class="btnscont">
+          <button id="tirarDados" class="boton-tirar" onclick="tirar()">
+            ¡Tirar!
+          </button>
+          <div id="tiros" style="font-size: 1.5em">Tiros: <span></span></div>
+          <button onclick="initGame();">Reiniciar</button>
+        </div>
+        <!-- Resto del HTML -->
+
+        <table id="puntajes">
+          <thead>
+            <tr>
+              <th>Juego</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div></div>
       <div id="modal" class="nodisp">
         <h2>Titulo</h2>
 
@@ -52,23 +79,6 @@
         <button onclick="confirmAceptado();">Si</button>
 
         <button onclick="confirmRechazado();">No</button>
-      </div>
-      <table id="puntajes">
-        <thead>
-          <tr>
-            <th>Juego</th>
-          </tr>
-        </thead>
-
-        <tbody></tbody>
-      </table>
-
-      <div id="tiros">Tiros: <span></span></div>
-
-      <div>
-        <button id="tirarDados" onclick="tirar();">¡Tirar!</button>
-
-        <button id="mostrarTabla" onclick="initGame();">Reiniciar</button>
       </div>
     </div>
 

@@ -34,8 +34,6 @@ body {
   align-items: center;
 }
 
-
-
 h1 {
   text-align: center;
   color: rgba(255, 0, 149, 0.8);
@@ -49,9 +47,7 @@ h1 {
   width: 20px;
   height: 20px;
 }
-/*@media s
-
-.dado {
+ç .dado {
   border: 2px solid transparent;
 }
 
@@ -71,9 +67,9 @@ h1 {
   text-align: center;
   padding: 5px 10px;
   margin: auto;
-  display: absolute;
-  top: 50;
-  left: 20;
+  position: absolute;
+  top: 200px;
+
   z-index: 30;
 }
 
@@ -89,6 +85,21 @@ button {
   border-radius: 20px;
   text-decoration: none;
   margin: 20px 0;
+}
+.area-dados {
+  /* Reduce el tamaño del área de los dados */
+  font-size: 0.8em; /* Ajusta según sea necesario */
+}
+#dados {
+  display: flex;
+  flex-direction: column;
+}
+
+#puntajes {
+  /* Aumenta el tamaño de la tabla */
+  width: 80%;
+  margin: 0 auto; /* O un valor específico en píxeles */
+  font-size: 0.8em; /* Ajusta el tamaño de la fuente según sea necesario */
 }
 
 #modal p {
@@ -134,4 +145,29 @@ button {
   border-radius: 20px;
   text-decoration: none;
   margin: 20px 0;
+}
+.btnscont {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+@media screen and (max-width: 414px) {
+  body {
+    background: #000;
+  }
+  .contenedorJuego {
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+  }
+
+  .btnscont {
+    display: flex;
+    flex-direction: row;
+  }
+  #dados {
+    display: flex;
+    flex-direction: row;
+  }
 }

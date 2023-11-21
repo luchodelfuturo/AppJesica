@@ -48,6 +48,7 @@ function empezarJuego() {
     ganador: 0,
   };
   document.getElementById("juego-terminado").classList.add("nodisp");
+  document.getElementById("juego-terminado").style.display = "none";
 
   hacerTabla();
 }

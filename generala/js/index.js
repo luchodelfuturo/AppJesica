@@ -1,4 +1,4 @@
-const game = {
+let game = {
   dados: [],
   perfiles: [],
   color1: "",
@@ -28,7 +28,7 @@ const game = {
     T: [],
   },
 
-  dadosize: 100,
+  dadosize: 50,
 };
 
 const atQuarter = game.dadosize * 0.25;
@@ -41,7 +41,10 @@ const radius = game.dadosize * 0.1;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
-initGame();
+document.addEventListener("DOMContentLoaded", (event) => {
+  initGame();
+});
+
 function iniPuntaje(queJuego) {
   const puntaje = [];
 
@@ -56,16 +59,6 @@ function cargarUsuarios() {}
 function nroAlAzar(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-function mostrarDados() {
-  const cont = document.getElementById("dados");
-  cont.innerHTML = null;
-
-  for (let i = 0; i < 5; i++) {
-    cont.appendChild(mostrarDado(i, game.dados[i]));
-  }
-}
-
 const mostrarDado = (i, numero) => {
   let dado = document.createElement("canvas");
 
@@ -89,6 +82,14 @@ const mostrarDado = (i, numero) => {
 
   return dado;
 };
+function mostrarDados() {
+  const cont = document.getElementById("dados");
+  cont.innerHTML = null;
+
+  for (let i = 0; i < 5; i++) {
+    cont.appendChild(mostrarDado(i, game.dados[i]));
+  }
+}
 
 function mostrarTurnos() {
   document.querySelector("#tiros span").innerHTML = game.tiros;
@@ -189,7 +190,7 @@ function anotarPuntaje(queJuego) {
         game.puntos[queJuego][game.turno] = puntaje;
 
         game.puntos["T"][game.turno] += puntaje;
-
+        game.tiros = 0;
         cambiarTurno();
       }
     }
@@ -320,9 +321,13 @@ function tirarDados() {
 
   mostrarTurnos();
 }
-
-function cambiarTurno() {
+function resetearTiros() {
   game.tiros = 0;
+  // Cualquier otra lógica necesaria para finalizar el turno del jugador actual y preparar para el siguiente jugador
+}
+function cambiarTurno() {
+  console.log("Se cambio el turno");
+  resetearTiros();
 
   game.dados = [];
 
@@ -333,6 +338,7 @@ function cambiarTurno() {
   if (game.turno > game.cantJugadores - 1) {
     game.turno = 0;
   }
+  mostrarDados();
 
   document.getElementById("tirarDados").onclick = () => tirar();
 
@@ -381,6 +387,7 @@ function initGame() {
   mostrarTurnos();
 
   dibujarTablaPuntos();
+  mostrarDados();
 }
 
 function puntajeNumeros(numero) {
