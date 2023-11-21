@@ -107,8 +107,14 @@ h1,
 }
 
 #boton-empezar {
-  background-color: rgba(255, 0, 119, 0.838);
+  background-color:#69b15a;
   color: white;
+  font-weight: 800;
+  line-height: 3;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+ border-color:#69b15a;
 }
 
 .boton_juegos {
