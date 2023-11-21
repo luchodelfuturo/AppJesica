@@ -28,18 +28,31 @@ body {
   justify-content: center;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+}
+
+
 h1,
 #tipografia {
   font-size: 40px;
   font-weight: bolder;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin: -20px 20px 20px 20px;
   padding: 0px;
   overflow: visible;
   text-align: center;
   color: rgba(255, 0, 149, 0.8);
 }
 
+#enlace-volver {
+  margin-top: -25px;
+}
+
+#enlace-volver img {
+  width: 20px;
+  height: 20px;
+}
 /*@media screen and (prefers-color-scheme: dark) {
     body {
         background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
@@ -48,8 +61,8 @@ h1,
 
 /* Estilo para la tabla ta-te-ti */
 #ta-te-ti {
-  width: 90%;
-  height: 400px;
+  width:40%;
+  height: 50px;
   margin: 0 auto; /* Centra la tabla horizontalmente sin márgenes verticales */
   background-image: linear-gradient(to bottom, #a8ff97 0%, #caf3ae 51%);
   border-collapse: collapse; /* Elimina los espacios entre las celdas */

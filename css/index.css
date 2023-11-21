@@ -215,7 +215,7 @@ table {
 }
 th,
 td {
-  border: 1px solid rgba(255, 0, 149, 0.8);
+  border: 1px solid #ffffff;
   text-align: center;
   width: 90px;
   padding: 8px;
@@ -224,7 +224,7 @@ td {
 th:first-child,
 td:first-child {
   border: none;
-  border: 1px solid rgba(255, 0, 149, 0.8);
+  border: 1px solid #ffffff
 }
 
 /* Estilo del modal (debería estar oculto inicialmente) */
@@ -243,11 +243,12 @@ td:first-child {
 
 /* Estilo del contenido del modal */
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgba(255, 0, 149, 0.8);
   margin: 15% auto; /* 15% desde la parte superior y centrado horizontalmente */
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Ancho del contenido */
+  border: 1px rgba(255, 152, 212, 0.8);
+  width: 30%; /* Ancho del contenido */
+  color: #ffffff;
 }
 
 /* Estilo del botón para cerrar el modal */
