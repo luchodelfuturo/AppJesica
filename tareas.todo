@@ -9,19 +9,19 @@ UNA VEZ Q TERMINE TOODO
 
 TATETI
 
-☐  no sea tan brusco el color del usuario —> ejemplo borde para el tateti
-☐  y q las “X” y “0” tengan el = color
-☐  Texto → que diga turno de… j1 o j2
-☐  Revisar lógica → muestra quien juega una vez que jugo
+✔ no sea tan brusco el color del usuario —> ejemplo borde para el tateti @done (20/11/2023, 22:18:38)
+✔ y q las “X” y “0” tengan el = color @done (20/11/2023, 22:18:41)
+✔ Texto → que diga turno de… j1 o j2 @done (20/11/2023, 22:18:27)
+✔ Revisar lógica → muestra quien juega una vez que jugo @done (20/11/2023, 22:18:34)
 ✔ sumar ptos @done (16/11/2023, 23:55:26)
 ☐  Tamaño boton muy chico (pensar en que haciendo clic con el dedo queda espacio chico
 ☐  TERMINA EL JUEGO → Botones más grandes y uno abajo del otro
 
 PUNTOS
-☐ DIV POPUP
+✔ DIV POPUP @done (20/11/2023, 22:18:52)
 ☐ Hacer flecha volver atras
-☐ tabla con 3 columnas /juegos / j1 / j2 // filas // tateti / generala / 3er jeugo / Total
-☐ div q se vea q hay algo abajo (menu)
+✔ tabla con 3 columnas /juegos / j1 / j2 // filas // tateti / generala / 3er jeugo / Total @done (20/11/2023, 22:19:11)
+✔ div q se vea q hay algo abajo (menu) @done (20/11/2023, 22:19:00)
 
 BOTON PERFIL
 ☐ Boton // flecha volver atras 
