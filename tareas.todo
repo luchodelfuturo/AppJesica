@@ -33,14 +33,14 @@ BOTON PERFIL
 ☐ popup → que sea color legible 
 
 GENERALA 
-☐ Cuando arranques esten los dados e blanco y entre j1 y j2
+✔ Cuando arranques esten los dados e blanco y entre j1 y j2 @done (21/11/2023, 9:26:30)
 ☐ boton tirar mas grande y al lado de los dados
-☐ tabla mas ancha
+✔ tabla mas ancha @done (21/11/2023, 9:26:36)
 ☐ elementos mas grandes
-☐ dados mas chicos
-☐ Boton salir al costado izq o q sea flecha
-☐ dado se tiene q resetear entre usuario y usuario 
-☐ los modals que sean popup (aparecen abajo )
+✔ dados mas chicos @done (21/11/2023, 9:26:41)
+✔ Boton salir al costado izq o q sea flecha @done (21/11/2023, 9:26:46)
+✔ dado se tiene q resetear entre usuario y usuario @done (21/11/2023, 9:26:52)
+✔ los modals que sean popup (aparecen abajo ) @done (21/11/2023, 9:26:58)
 ☐ NO SE PUEDE ANOTAR NADA CUANDO TIROS = 0 NI TIRAR
 ☐ CHEQUEAR EL FUNC DEL JEUGO
 ☐ EN LA APP NO SE VE QUIÉN GANA CUANDO TERMINA, Y Q SEA POPUP
