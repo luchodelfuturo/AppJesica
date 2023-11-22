@@ -28,7 +28,7 @@ let game = {
     T: [],
   },
 
-  dadosize: 70,
+  dadosize: 50,
 };
 
 const atQuarter = game.dadosize * 0.25;

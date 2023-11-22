@@ -36,9 +36,11 @@ body {
   display: block;
 }
 
+
+
 h1,
 #tipografia {
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bolder;
   margin: -20px 20px 20px 20px;
   padding: 0px;
@@ -67,29 +69,38 @@ h1,
     }
 }*/
 
+#main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar la tabla horizontalmente */
+}
+
+
 /* Estilo para la tabla ta-te-ti */
 #ta-te-ti {
-  width: 40%;
-  height: 50px;
-  margin: 0 auto; /* Centra la tabla horizontalmente sin márgenes verticales */
+  width: 80%; /* Ajustar el ancho de la tabla según sea necesario */
+  margin: 20px; /* Agregar un margen para mejorar la apariencia */
   background-image: linear-gradient(to bottom, #a8ff97 0%, #caf3ae 51%);
   border-collapse: collapse; /* Elimina los espacios entre las celdas */
 }
 
-/* Estilo para las celdas de la tabla */
-#ta-te-ti td {
-  border: 3px solid rgb(73, 220, 112);
-  font-size: 1rem;
+#ta-te-ti caption {
+  font-size: 24px;
   font-weight: bold;
-  color: black;
-  vertical-align: center;
-  text-align: center;
-  width: 10em;
-  height: 10em;
-  margin: 0; /* Elimina márgenes para las celdas */
-  padding: 0; /* Elimina padding para las celdas */
 }
 
+/* Estilo para las celdas de la tabla */
+
+
+#ta-te-ti td {
+  width: 33%; /* Ajustar el ancho de las celdas según sea necesario */
+  height: 80px; /* Ajustar la altura de las celdas según sea necesario */
+  border: 2px solid #ccc;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
 /* Estilos para ocultar elementos específicos */
 #ta-te-ti caption,
 #ta-te-ti td thead,
@@ -115,6 +126,8 @@ h1,
 }
 
 #boton-empezar {
+  height: 60px;
+  width: 145px;
   background-color: #69b15a;
   color: white;
   font-weight: 800;
@@ -146,6 +159,9 @@ h1,
   text-decoration: none;
   margin: 20px 0;
 }
+
+
+
 @media screen and (max-width: 414px) {
   .app {
     width: 90%;
@@ -157,4 +173,34 @@ h1,
     align-items: center;
     justify-content: center;
   }
+  #ta-te-ti {
+    width: 80%;
+    height: 50px;
+    margin: 0 auto; /* Centra la tabla horizontalmente sin márgenes verticales */
+    background-image: linear-gradient(to bottom, #a8ff97 0%, #caf3ae 51%);
+    border-collapse: collapse; /* Elimina los espacios entre las celdas */
+  }
+  /* Estilo para las celdas de la tabla */
+#ta-te-ti td {
+  border: 3px solid rgb(73, 220, 112);
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+  vertical-align: center;
+  text-align: center;
+  width: 10em;
+  height: 10em;
+  margin: 0; /* Elimina márgenes para las celdas */
+  padding: 0; /* Elimina padding para las celdas */
 }
+#enlace-volver2 {
+  padding-right: 300px;
+  margin-top: -190px;
+  line-height: 90px;
+
+
+}
+
+}
+
+

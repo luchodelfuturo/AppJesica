@@ -25,9 +25,11 @@ body {
   text-align: center;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  line-height: 35px;
   justify-content: center;
+  
 }
 
 h1 {
@@ -35,7 +37,7 @@ h1 {
   font-weight: bolder;
   margin-top: 30px;
   margin-bottom: 20px;
-  padding: 0px;
+  padding: 10px;
   overflow: visible;
   text-align: center;
   color: rgba(255, 0, 149, 0.8);
@@ -44,7 +46,7 @@ h1 {
 ul {
   list-style: none;
   list-style-type: none;
-  padding: 0;
+  padding: 15px;
   margin: 0;
 }
 
@@ -244,11 +246,14 @@ td:first-child {
 
 /* Estilo del contenido del modal */
 .modal-content {
+  padding-left: 20px;
+  margin-left: 120px;
+  display: inline-table;
   background-color: rgba(255, 0, 149, 0.8);
-  margin: 15% auto; /* 15% desde la parte superior y centrado horizontalmente */
-  padding: 20px;
+  margin: 14px; /* 15% desde la parte superior y centrado horizontalmente */
+  padding: 25px;
   border: 1px rgba(255, 152, 212, 0.8);
-  width: 30%; /* Ancho del contenido */
+  height: 55%;
   color: #ffffff;
 }
 
@@ -292,4 +297,43 @@ td:first-child {
 #enlace-volver img{
   width: 50px;
   height: 50px;
+}
+
+/* aca va todo lo verticalpx con un max de 400 */
+@media screen and (max-width: 400px) {
+.app {
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  font-size: 40px;
+  font-weight: bolder;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 0px;
+  overflow: visible;
+  text-align: center;
+  color: rgba(255, 0, 149, 0.8);
+}
+
+ul {
+  list-style: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.modal-content {
+  display: table;
+  background-color: rgba(255, 0, 149, 0.8);
+  margin: 35% 0px; /* 15% desde la parte superior y centrado horizontalmente */
+  padding: 25px;
+  border: 1px rgba(255, 152, 212, 0.8);
+  width: 60%; /* Ancho del contenido */
+  color: #ffffff;
+}
 }

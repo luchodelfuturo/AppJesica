@@ -88,6 +88,7 @@ button {
   margin: 20px 0;
 }
 .area-dados {
+  padding-bottom: 60px;
   /* Reduce el tamaño del área de los dados */
   font-size: 0.8em; /* Ajusta según sea necesario */
 }
@@ -157,6 +158,8 @@ button {
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  padding-bottom: 60px;
+
 }
 .contenedorJuego {
   display: flex;
@@ -166,25 +169,33 @@ button {
   height: 80vh;
   align-items: center;
 }
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 400px) {
   body {
     align-items: center;
   }
   .contenedorJuego {
+    font-size: larger;
     flex-direction: column;
-    height: 100%;
-    width: 80%;
-    padding: 0px;
+    height: 120%;
+    width: 90%;
+    padding: 15px;
     align-items: center;
   }
 
   .btnscont {
     display: flex;
     flex-direction: row;
+    gap: 20px;
+    align-items: center;
   }
   #dados {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
+  .area-dados {
+    font-size: 0.8em; /* Ajusta según sea necesario */
+  }
 }
+
+
