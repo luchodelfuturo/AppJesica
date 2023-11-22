@@ -1,6 +1,5 @@
 // document.addEventListener("deviceready", onDeviceReady, false);
 
-
 const cantJugadores = 2;
 
 let perfiles = [];
@@ -20,7 +19,7 @@ function cargarPerfil() {
   player = Number(new URLSearchParams(window.location.search).get("player"));
 
   document.getElementById("jugador").innerHTML = player + 1;
-// perfiles = [0{},1{}] perfiles[1]
+  // perfiles = [0{},1{}] perfiles[1]
   if (perfiles[player]) {
     document.getElementById("nombre").value = perfiles[player].nombre;
 
@@ -35,7 +34,6 @@ function cargarPerfil() {
 function guardarPerfil(event) {
   event.preventDefault();
 
- 
   //  ["nombre", "apodo", "color", "pic"].forEach((campo) =>
   //   document.getElementById(campo)
   // );
@@ -87,6 +85,19 @@ function validarForm() {
 
     return false;
   }
+  perfiles = Storage.cargar("perfiles") || [];
+
+  if (perfiles.length != 0) {
+    if (color === perfiles[0].color) {
+      console.log(color, perfiles);
+      alert("El Color ya fue usado, elija otro.")
+      return false;
+    }
+  }
+  //Primero traer colores del storage
+  //checkear que Perfil es, si 1 o 2 .
+
+  // Comprar color con color1 y color2, si son d
 
   // apodo.length
   // if (img.getAttribute("src") === "img/usuario-de-perfil.png") {
@@ -96,7 +107,7 @@ function validarForm() {
   // } else {
   //   return true;
   // }
-  return true
+  return true;
 }
 
 function esValido(propiedad, valor) {

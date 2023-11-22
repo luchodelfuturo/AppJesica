@@ -302,11 +302,11 @@ function dibujarCirculo(ctx, x, y) {
 
 function tirarDados() {
   if (game.tiros === 0) {
-    game.seleccionados = [true, true, true, true, true];
+    game.seleccionados = [false, false, false, false, false];
   }
 
   for (let i = 0; i < 5; i++) {
-    if (game.seleccionados[i]) {
+    if (!game.seleccionados[i]) {
       game.dados[i] = nroAlAzar(1, 6);
     }
   }
@@ -356,6 +356,7 @@ function cambiarTurno() {
 }
 
 function tirar() {
+  console.log(game);
   tirarDados();
 
   mostrarDados();
@@ -385,9 +386,10 @@ function initGame() {
   game.color2 = perfiles2[1].color;
 
   mostrarTurnos();
-
+  document.getElementById("tirarDados").onclick = () => tirar();
   dibujarTablaPuntos();
   mostrarDados();
+  console.log(game);
 }
 
 function puntajeNumeros(numero) {
@@ -434,7 +436,7 @@ function gameOver() {
     mensaje += "Empate";
   } else {
     const jugador = totales.indexOf(Math.max(...totales)) + 1;
-    mensaje += "Gano J" + (totales.indexOf(Math.max(...totales)) + 1);
+    mensaje += "Gano " + game.perfiles[jugador].nombre;
     console.log(mensaje);
     if (jugador == 1) {
       puntajes = {

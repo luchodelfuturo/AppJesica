@@ -48,7 +48,7 @@ h1 {
   width: 40px;
   height: 40px;
 }
- .dado {
+.dado {
   border: 2px solid transparent;
 }
 
@@ -100,7 +100,7 @@ button {
   /* Aumenta el tamaño de la tabla */
   width: 85%;
   margin: 0 auto; /* O un valor específico en píxeles */
-  font-size: 1,5em; /* Ajusta el tamaño de la fuente según sea necesario */
+  font-size: 1, 5em; /* Ajusta el tamaño de la fuente según sea necesario */
 }
 
 #modal p {
@@ -158,13 +158,23 @@ button {
   gap: 20px;
   align-items: center;
 }
+.contenedorJuego {
+  display: flex;
+  width: 90%;
+  padding: 0 50px;
+  margin: 0 auto;
+  height: 80vh;
+  align-items: center;
+}
 @media screen and (max-width: 414px) {
   body {
-   align-items: center;
+    align-items: center;
   }
   .contenedorJuego {
     flex-direction: column;
     height: 100%;
+    width: 80%;
+    padding: 0px;
     align-items: center;
   }
 
@@ -175,5 +185,6 @@ button {
   #dados {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
   }
 }

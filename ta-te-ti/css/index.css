@@ -23,7 +23,7 @@ body {
   text-align: center;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -32,7 +32,7 @@ body {
   display: flex;
   align-items: center;
 }
-.header{
+.header {
   display: block;
 }
 
@@ -51,13 +51,13 @@ h1,
   margin-top: -90px;
   padding-right: 240px;
 }
-#enlace-volver2{
+#enlace-volver2 {
   padding-right: 500px;
   margin-top: -140px;
 }
 
-
-#enlace-volver img, #enlace-volver2 img {
+#enlace-volver img,
+#enlace-volver2 img {
   width: 50px;
   height: 50px;
 }
@@ -69,7 +69,7 @@ h1,
 
 /* Estilo para la tabla ta-te-ti */
 #ta-te-ti {
-  width:40%;
+  width: 40%;
   height: 50px;
   margin: 0 auto; /* Centra la tabla horizontalmente sin márgenes verticales */
   background-image: linear-gradient(to bottom, #a8ff97 0%, #caf3ae 51%);
@@ -107,7 +107,7 @@ h1,
   top: 0;
   left: 0;
   background-color: rgba(255, 0, 149, 0.8);
-  
+
   flex-direction: column;
   gap: 2rem;
   justify-content: center;
@@ -115,26 +115,25 @@ h1,
 }
 
 #boton-empezar {
-  background-color:#69b15a;
+  background-color: #69b15a;
   color: white;
   font-weight: 800;
   line-height: 3;
   color: #fff;
   border-radius: 20px;
   text-decoration: none;
- border-color:#69b15a;
+  border-color: #69b15a;
 }
 
-#botonSalir{
-  background-color:#2e6024;
+#botonSalir {
+  background-color: #2e6024;
   color: white;
   font-weight: 800;
   line-height: 3;
   color: #fff;
   border-radius: 20px;
   text-decoration: none;
- border-color:#37622e;
-
+  border-color: #37622e;
 }
 .boton_juegos {
   font-weight: 800;
@@ -146,4 +145,16 @@ h1,
   border-radius: 20px;
   text-decoration: none;
   margin: 20px 0;
+}
+@media screen and (max-width: 414px) {
+  .app {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
