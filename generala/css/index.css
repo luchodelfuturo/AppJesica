@@ -96,7 +96,10 @@ button {
   display: flex;
   flex-direction: column;
 }
+table#puntajes {
+  margin-bottom: 50px;
 
+}
 #puntajes {
   /* Aumenta el tamaño de la tabla */
   width: 85%;
