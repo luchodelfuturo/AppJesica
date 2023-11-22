@@ -30,8 +30,9 @@ body {
 }
 
 .header {
-  display: block;
-  align-items: center;
+  margin: 14px;
+
+  
 }
 
 h1 {
@@ -88,24 +89,27 @@ button {
   margin: 20px 0;
 }
 .area-dados {
-  padding-bottom: 60px;
+  /* padding-bottom: 60px; */
   /* Reduce el tamaño del área de los dados */
   font-size: 0.8em; /* Ajusta según sea necesario */
 }
 #dados {
+  margin-top: -70px;
   display: flex;
   flex-direction: column;
 }
 table#puntajes {
   margin-bottom: 50px;
+  margin-left: 90px;
+
 
 }
 #puntajes {
-  /* Aumenta el tamaño de la tabla */
-  width: 85%;
-  margin: 0 auto; /* O un valor específico en píxeles */
-  font-size: 1, 5em; /* Ajusta el tamaño de la fuente según sea necesario */
-}
+  background-color: #f13295;
+    border-radius: 6px;
+    width: 55%;
+  
+  }
 
 #modal p {
   padding: 0, 25rem;
@@ -157,11 +161,14 @@ table#puntajes {
   margin: 20px 0;
 }
 .btnscont {
+  margin: 15px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  padding-bottom: 60px;
+  margin-bottom: 100px;
+
+  /* padding-bottom: 60px; */
 
 }
 .contenedorJuego {
@@ -175,6 +182,12 @@ table#puntajes {
 @media screen and (max-width: 400px) {
   body {
     align-items: center;
+  }
+  .header {
+
+    padding-top: 43px;
+  display: block;
+  align-items: center;
   }
   .contenedorJuego {
     font-size: larger;
@@ -198,6 +211,13 @@ table#puntajes {
   }
   .area-dados {
     font-size: 0.8em; /* Ajusta según sea necesario */
+  }
+  #puntajes {
+    background-color: #f13295;
+  border-radius: 6px;
+  width: 85%;
+  margin: 8px auto;
+  font-size: 1, 5em;
   }
 }
 
