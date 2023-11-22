@@ -33,14 +33,13 @@ body {
 }
 
 h1 {
-  font-size: 40px;
-  font-weight: bolder;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  padding: 10px;
-  overflow: visible;
-  text-align: center;
-  color: rgba(255, 0, 149, 0.8);
+  
+  font-size: 30px;
+    font-weight: bolder;
+    padding: -15px;
+    overflow: visible;
+    text-align: center;
+    color: rgba(255, 0, 149, 0.8);
 }
 
 ul {
@@ -59,20 +58,23 @@ li {
   display: inline-block;
   flex-direction: column;
   align-items: center;
+  padding-right: 50px;
+
 }
 
 #formulario label {
-  width: 50%;
   margin-top: 10px;
   font-weight: bolder;
-  font-size: 25px;
-  padding: 10px;
+  font-size: 18px;
+  padding: 7px;
 }
 
 #formulario input {
   width: 50%;
   margin-bottom: 20px;
   margin-top: 10px;
+  border: none;
+
 }
 
 .event {
@@ -139,10 +141,10 @@ li {
 }
 
 #btn-guardar-perfil {
-  font-weight: 800;
+  font-weight: 600;
   font-size: smaller;
-  width: 200px;
-  padding: 5px 25px;
+  width: 150px;
+  padding: 10x 15px;
   background: rgba(255, 0, 149, 0.8);
   border: rgba(162, 16, 111, 0.8);
   color: #fff;
@@ -288,8 +290,9 @@ td:first-child {
 #enlace-volver {
   /* margin-top: -90px;
   padding-right: 240px; */
-  margin-top: -50px;
-  padding-right: 400px;
+  margin-top: 0px;
+padding-left: 18px;
+
 
 }
 
@@ -313,7 +316,6 @@ td:first-child {
 h1 {
   font-size: 40px;
   font-weight: bolder;
-  margin-top: 30px;
   margin-bottom: 20px;
   padding: 0px;
   overflow: visible;
@@ -335,5 +337,25 @@ ul {
   border: 1px rgba(255, 152, 212, 0.8);
   width: 60%; /* Ancho del contenido */
   color: #ffffff;
+}
+#enlace-volver {
+
+  padding-right: 290px;
+
+}
+#formulario {
+  line-height: 80px;
+  color: rgba(255, 0, 149, 0.8);
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+}
+#formulario input{
+  width: 50%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border: none;
+  height: 35px;
+
 }
 }
