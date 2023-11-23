@@ -163,7 +163,7 @@ h1,
 
 
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 400px) {
   .app {
     width: 90%;
     margin: 0 auto;

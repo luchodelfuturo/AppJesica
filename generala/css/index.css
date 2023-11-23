@@ -238,7 +238,8 @@ table#puntajes {
   width: 85%;
   margin: 8px auto;
   font-size: 1, 5em;
-  }
+  height: 420px;
+}
   table#puntajes {
     margin-bottom: 50px;
     margin-left: 25px;
