@@ -6,10 +6,10 @@ let perfiles = [];
 
 let player = 0;
 
-// function onDeviceReady() {
+ function onDeviceReady() {
 
-//   cargarPerfil();
-// }
+   cargarPerfil();
+ }
 
 function cargarPerfil() {
   console.log("Cargando Usuarios... ");
