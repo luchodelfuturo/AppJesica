@@ -169,4 +169,4 @@ function onPictureError(err) {
 
 document.getElementById("btn-guardar-perfil").onclick = (event) => {
   guardarPerfil(event);
-};
+}
