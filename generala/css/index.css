@@ -152,6 +152,11 @@ table#puntajes {
   padding: 0, 25rem;
 }
 
+.btn{
+  background-color:#abf678;
+  border-bottom: #7ab355;
+
+}
 @media screen and (prefers-color-scheme: dark) {
   body {
     background-image: linear-gradient(to bottom, #cfffc5 0%, #abf678 51%);
