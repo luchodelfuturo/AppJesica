@@ -124,12 +124,12 @@ li {
   height: 50px;
 }
 
-.boton_juegos {
+.boton_juegos {    
   font-weight: 900;
-  font-size: smaller;
-  width: 200px;
-  line-height: 50px;
-  padding: 4px 25px;
+  font-size: xx-large;
+  width: 245px;
+  line-height: 60px;
+  padding: 12px 25px;
   background: rgba(255, 0, 149, 0.8);
   border: rgba(162, 16, 111, 0.8);
   color: #fff;
@@ -141,15 +141,17 @@ li {
 }
 
 #btn-guardar-perfil {
-  font-weight: 600;
-  font-size: smaller;
-  width: 150px;
-  padding: 10x 15px;
-  background: rgba(255, 0, 149, 0.8);
-  border: rgba(162, 16, 111, 0.8);
-  color: #fff;
-  border-radius: 20px;
-  margin: 25px 0;
+  padding: 0px;
+    font-weight: 600;
+    font-size: smaller;
+    width: 158px;
+    height: 51px;
+    /* padding: 10px; */
+    background: rgba(255, 0, 149, 0.8);
+    border: rgba(162, 16, 111, 0.8);
+    color: #fff;
+    border-radius: 20px;
+    margin: 25px 0;
 }
 
 .popup {
@@ -196,15 +198,15 @@ li {
 #botonPuntaje,
 .boton-empezar {
   font-weight: 1000;
-  font-size: medium;
-  width: 100px;
-  line-height: 35px;
-  padding: 2px 12px;
-  background: #50df74;
-  border: rgba(162, 16, 111, 0.8);
-  color: #fff;
-  border-radius: 10px;
-  margin: 10px 0;
+    font-size: medium;
+    width: 120px;
+    line-height: 35px;
+    padding: 5px 12px;
+    background: #50df74;
+    border: rgba(162, 16, 111, 0.8);
+    color: #fff;
+    border-radius: 10px;
+    margin: 10px 0;
 }
 
 a {
@@ -275,15 +277,16 @@ td:first-child {
 
 #botonPuntos{
   font-size: smaller;
-  font-weight: 1000;
-  width: 200px;
-  line-height: 35px;
-  padding: 2px 12px;
-  background: #42614a;
-  border: rgba(162, 16, 111, 0.8);
-  color: #fff;
-  border-radius: 10px;
-  margin: 10px 0;
+    font-weight: 1000;
+    width: 245px;
+    height: 50px;
+    line-height: 35px;
+    padding: 2px 12px;
+    background: #42614a;
+    border: rgba(162, 16, 111, 0.8);
+    color: #fff;
+    border-radius: 10px;
+    margin: 10px 0;
 }
 
 #enlace-volver {
@@ -313,13 +316,14 @@ padding-left: 18px;
   justify-content: center;
 }
 h1 {
-  font-size: 40px;
-  font-weight: bolder;
-  margin-bottom: 20px;
-  padding: 0px;
-  overflow: visible;
-  text-align: center;
-  color: rgba(255, 0, 149, 0.8);
+  line-height: 55px;
+  font-size: 60px;
+    font-weight: bolder;
+    margin-bottom: 50px;
+    padding: 0px;
+    overflow: visible;
+    text-align: center;
+    color: rgba(255, 0, 149, 0.8);
 }
 
 ul {
@@ -343,7 +347,7 @@ ul {
 
 }
 #formulario {
-  line-height: 80px;
+  line-height: 60px;
   color: rgba(255, 0, 149, 0.8);
   display: inline-block;
   flex-direction: column;
