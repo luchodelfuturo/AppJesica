@@ -102,7 +102,7 @@ function validarForm() {
 
 //  Comprar color con color1 y color2, si son d
 
- apodo.length
+//  apodo.length
  if (img.getAttribute("src") === "img/usuario-de-perfil.png") {
    //     //todavía no se saco la foto y no es valido
 
