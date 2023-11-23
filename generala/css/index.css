@@ -60,12 +60,12 @@ h1 {
 }
 
 /* tendria que ser del color del usuario correspondiente */
-.turnoActual {
+/* .turnoActual {
   background-color: rgb(40, 115, 190);
-}
+} */
 
 #modal {
-  background-color: rgba(255, 0, 149, 0.8);
+  background-color:#abf678;
   border-radius: 1em;
   color: white;
   text-align: center;
@@ -129,7 +129,7 @@ table#puntajes {
 }
 #modal,
 #modal2 {
-  background-color: rgba(255, 0, 149, 0.8);
+  background-color:#abf678;
   border-radius: 1em;
   color: white;
   text-align: center;
@@ -143,7 +143,7 @@ table#puntajes {
 }
 
 #modal2 h2 {
-  background-color: rgba(255, 0, 149, 0.8);
+  background-color:#abf678;
 
   border-radius: 0, 2em;
 }
