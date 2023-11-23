@@ -125,23 +125,23 @@ function esValido(propiedad, valor) {
 
 //FUNCION FOTO //
 
- function takePicture() {
-   navigator.camera.getPicture(
-     (imageData) => {
-       document.getElementById("pic").src =
-         "data:image/jpeg;base64," + imageData;
-     },
-     (error) => {
-       console.error("No se puede tomar la foto", error);
-     },
-     {
-       destinationType:
-         device.platform === "browser"
-           ? Camera.DestinationType.FILE_URI
-           : Camera.DestinationType.DATA_URL,
-     }
-   );
- }
+//  function takePicture() {
+//    navigator.camera.getPicture(
+//      (imageData) => {
+//        document.getElementById("pic").src =
+//          "data:image/jpeg;base64," + imageData;
+//      },
+//      (error) => {
+//        console.error("No se puede tomar la foto", error);
+//      },
+//      {
+//        destinationType:
+//          device.platform === "browser"
+//            ? Camera.DestinationType.FILE_URI
+//            : Camera.DestinationType.DATA_URL,
+//      }
+//    );
+//  }
 
 function takePicture() {
   navigator.camera.getPicture(onPicture, onPictureError, {
