@@ -141,6 +141,16 @@ table#puntajes {
   transform: translate(-50%, -50%);
   z-index: 30;
 }
+/* #modal img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.volver-jugar {
+  display: inline-block;
+} */
 
 #modal2 h2 {
   background-color:#abf678;

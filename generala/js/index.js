@@ -31,6 +31,21 @@ let game = {
   dadosize: 50,
 };
 
+let perfiles;
+var colorDeFondo;
+let fondo = document.getElementById("main");
+let tablaTateti = document.getElementById("ta-te-ti");
+function cargarUsuarios() {
+  perfiles = Storage.cargar("perfiles") || [];
+  let puntajes2 = Storage.cargar("puntajes") || [];
+  console.log(perfiles);
+  console.log(puntajes2, "pntjs2");
+  colorJugadores(perfiles);
+
+  document.getElementById("turnosName").textContent =
+    perfiles[juego.turnos - 1].nombre;
+}
+
 const atQuarter = game.dadosize * 0.25;
 
 const atHalf = game.dadosize * 0.5;
@@ -518,3 +533,12 @@ function copyArray(a) {
 }
 
 const allEqual = (arr) => arr.every((val) => val === arr[0]);
+
+// function resetearJuego() {
+//   // Aquí debes implementar la lógica para resetear el juego
+//   // Puedes reiniciar las variables y elementos necesarios
+//   initGame();
+
+//   // Oculta el modal después de reiniciar el juego
+//   document.getElementById('modal').classList.add('nodisp');
+// }
