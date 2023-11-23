@@ -143,13 +143,13 @@ function esValido(propiedad, valor) {
     );
   }
 
-function takePicture() {
-  navigator.camera.getPicture(onPicture, onPictureError, {
-    destinationType: Camera.DestinationType.DATA_URL,
+// function takePicture() {
+//   navigator.camera.getPicture(onPicture, onPictureError, {
+//     destinationType: Camera.DestinationType.DATA_URL,
 
-    quality: 35,
-  });
-}
+//     quality: 35,
+//   });
+// }
 
 function onPicture(data) {
   document
