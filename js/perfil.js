@@ -110,8 +110,8 @@ function validarForm() {
 //  } else {
 //    return true;
 //  }
-//   return true;
-// }
+   return true;
+ }
 
 function esValido(propiedad, valor) {
   let found = false;
@@ -125,31 +125,31 @@ function esValido(propiedad, valor) {
 
 //FUNCION FOTO //
 
-  function takePicture() {
-    navigator.camera.getPicture(
-      (imageData) => {
-        document.getElementById("pic").src =
-          "data:image/jpeg;base64," + imageData;
-      },
-      (error) => {
-        console.error("No se puede tomar la foto", error);
-      },
-      {
-        destinationType:
-          device.platform === "browser"
-            ? Camera.DestinationType.FILE_URI
-            : Camera.DestinationType.DATA_URL,
-      }
-    );
-  }
+  // function takePicture() {
+  //   navigator.camera.getPicture(
+  //     (imageData) => {
+  //       document.getElementById("pic").src =
+  //         "data:image/jpeg;base64," + imageData;
+  //     },
+  //     (error) => {
+  //       console.error("No se puede tomar la foto", error);
+  //     },
+  //     {
+  //       destinationType:
+  //         device.platform === "browser"
+  //           ? Camera.DestinationType.FILE_URI
+  //           : Camera.DestinationType.DATA_URL,
+  //     }
+  //   );
+  // }
 
-// function takePicture() {
-//   navigator.camera.getPicture(onPicture, onPictureError, {
-//     destinationType: Camera.DestinationType.DATA_URL,
+ function takePicture() {
+   navigator.camera.getPicture(onPicture, onPictureError, {
+     destinationType: Camera.DestinationType.DATA_URL,
 
-//     quality: 35,
-//   });
-// }
+     quality: 35,
+   });
+ }
 
 function onPicture(data) {
   document
@@ -169,4 +169,4 @@ function onPictureError(err) {
 
 document.getElementById("btn-guardar-perfil").onclick = (event) => {
   guardarPerfil(event);
-}
+};
