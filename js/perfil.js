@@ -103,15 +103,15 @@ function validarForm() {
 //  Comprar color con color1 y color2, si son d
 
 //  apodo.length
- if (img.getAttribute("src") === "img/usuario-de-perfil.png") {
-   //     //todavía no se saco la foto y no es valido
+//  if (img.getAttribute("src") === "img/usuario-de-perfil.png") {
+//    //     //todavía no se saco la foto y no es valido
 
-   return false;
- } else {
-   return true;
- }
-  return true;
-}
+//    return false;
+//  } else {
+//    return true;
+//  }
+//   return true;
+// }
 
 function esValido(propiedad, valor) {
   let found = false;
@@ -125,23 +125,23 @@ function esValido(propiedad, valor) {
 
 //FUNCION FOTO //
 
- function takePicture() {
-   navigator.camera.getPicture(
-     (imageData) => {
-       document.getElementById("pic").src =
-         "data:image/jpeg;base64," + imageData;
-     },
-     (error) => {
-       console.error("No se puede tomar la foto", error);
-     },
-     {
-       destinationType:
-         device.platform === "browser"
-           ? Camera.DestinationType.FILE_URI
-           : Camera.DestinationType.DATA_URL,
-     }
-   );
- }
+//  function takePicture() {
+//    navigator.camera.getPicture(
+//      (imageData) => {
+//        document.getElementById("pic").src =
+//          "data:image/jpeg;base64," + imageData;
+//      },
+//      (error) => {
+//        console.error("No se puede tomar la foto", error);
+//      },
+//      {
+//        destinationType:
+//          device.platform === "browser"
+//            ? Camera.DestinationType.FILE_URI
+//            : Camera.DestinationType.DATA_URL,
+//      }
+//    );
+//  }
 
 function takePicture() {
   navigator.camera.getPicture(onPicture, onPictureError, {
