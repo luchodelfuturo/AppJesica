@@ -36,13 +36,15 @@ body {
 }
 
 h1 {
-  text-align: center;
+  padding-left: 61px;
+  text-align:left;
   color: rgba(255, 0, 149, 0.8);
 }
 
 #enlace-volver {
+  padding-right: 500px;
   margin-top: -78px;
-  padding-right: 180px;
+
 }
 
 #enlace-volver img {
@@ -71,7 +73,6 @@ h1 {
   margin: auto;
   position: absolute;
   top: 200px;
-
   z-index: 30;
 }
 
@@ -99,7 +100,7 @@ button {
   flex-direction: column;
 }
 table#puntajes {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   margin-left: 90px;
 
 
@@ -183,6 +184,12 @@ table#puntajes {
   body {
     align-items: center;
   }
+
+  h1{
+    text-align: center;
+    color: rgba(255, 0, 149, 0.8);
+  }
+
   .header {
 
     padding-top: 43px;
@@ -199,12 +206,14 @@ table#puntajes {
   }
 
   .btnscont {
+    margin: 0px;
     display: flex;
     flex-direction: row;
     gap: 20px;
     align-items: center;
   }
   #dados {
+    margin-top: -50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -219,6 +228,14 @@ table#puntajes {
   margin: 8px auto;
   font-size: 1, 5em;
   }
+  table#puntajes {
+    margin-bottom: 50px;
+    margin-left: 25px;
+}
+#enlace-volver {
+  margin-top: -78px;
+  padding-right: 180px;
+}
 }
 
 

@@ -252,7 +252,6 @@ td:first-child {
   margin-left: 120px;
   display: inline-table;
   background-color: rgba(255, 0, 149, 0.8);
-  margin: 14px; /* 15% desde la parte superior y centrado horizontalmente */
   padding: 25px;
   border: 1px rgba(255, 152, 212, 0.8);
   height: 55%;
@@ -332,7 +331,7 @@ ul {
 .modal-content {
   display: table;
   background-color: rgba(255, 0, 149, 0.8);
-  margin: 35% 0px; /* 15% desde la parte superior y centrado horizontalmente */
+  margin: 35% 9px; /* 15% desde la parte superior y centrado horizontalmente */
   padding: 25px;
   border: 1px rgba(255, 152, 212, 0.8);
   width: 60%; /* Ancho del contenido */
@@ -358,4 +357,5 @@ ul {
   height: 35px;
 
 }
+
 }
