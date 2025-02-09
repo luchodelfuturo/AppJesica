@@ -160,8 +160,8 @@ function juegoGanador() {
 
 function terminado() {
   let puntajes = JSON.parse(localStorage.getItem("puntajes")) || {
-    jugador1: { tateti: 0, generala: 0, tercerGame: 0 },
-    jugador2: { tateti: 0, generala: 0, tercerGame: 0 },
+    jugador1: { tateti: 0, generala: 0, memotest: 0 },
+    jugador2: { tateti: 0, generala: 0, memotest: 0 },
   };
   let msg = "Empate";
   if (juego.ganador !== 0) {

@@ -442,8 +442,8 @@ function esFull(dados) {
 function gameOver() {
   let mensaje = "";
   let puntajes = JSON.parse(localStorage.getItem("puntajes")) || {
-    jugador1: { tateti: 0, generala: 0, tercerGame: 0 },
-    jugador2: { tateti: 0, generala: 0, tercerGame: 0 },
+    jugador1: { tateti: 0, generala: 0, memotest: 0 },
+    jugador2: { tateti: 0, generala: 0, memotest: 0 },
   };
   const totales = game.puntos["T"];
 

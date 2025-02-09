@@ -86,8 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
 // Función para crear la tabla de puntajes
 function crearTabla() {
   let puntajes = JSON.parse(localStorage.getItem("puntajes")) || {
-    jugador1: { tateti: 0, generala: 0, tercerGame: 0 },
-    jugador2: { tateti: 0, generala: 0, tercerGame: 0 },
+    jugador1: { tateti: 0, generala: 0, memotest: 0 },
+    jugador2: { tateti: 0, generala: 0, memotest: 0 },
   };
   let perfiles2 = JSON.parse(localStorage.getItem("perfiles")) || [];
 

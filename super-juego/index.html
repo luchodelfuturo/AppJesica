@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memotest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: linear-gradient(to bottom, #cfffc5 0%, #abf678 51%);
+        }
+
+        #volver {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            text-decoration: none;
+            color: black;
+        }
+
+        #turnoJugador {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #tablero {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            grid-gap: 10px;
+            justify-content: center;
+            margin: 20px auto;
+        }
+
+        .carta {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            user-select: none;
+            transition: background 0.3s;
+        }
+
+        .carta.volteada {
+            background-color: white;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Estilos del popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .popup h2 {
+            margin: 0;
+        }
+
+        .popup button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .cerrar {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <a id="volver" href="../menu.html">⬅</a>
+
+    <h1>Memotest</h1>
+    
+    <div id="turnoJugador">Turno de: <span id="nombreJugador"></span></div>
+
+    <div id="juego">
+        <div id="tablero"></div>
+    </div>
+
+    <button id="reiniciar">Reiniciar Juego</button>
+
+    <!-- Popup de ganador -->
+    <div id="popup" class="popup">
+        <span class="cerrar" onclick="cerrarPopup()">×</span>
+        <h2 id="mensajeGanador"></h2>
+        <button onclick="cerrarPopup()">Jugar de nuevo</button>
+    </div>
+
+    <script>
+        let cartas = ["🍎", "🍌", "🍇", "🍉", "🍓", "🍒", "🍍", "🥭"];
+        cartas = [...cartas, ...cartas];
+        cartas.sort(() => Math.random() - 0.5);
+
+        let tablero = document.getElementById("tablero");
+        let primeraCarta = null;
+        let segundaCarta = null;
+        let bloqueo = false;
+        let turno = 1;
+        let paresJugador1 = 0;
+        let paresJugador2 = 0;
+        let totalPares = cartas.length / 2;
+
+        let perfiles = JSON.parse(localStorage.getItem("perfiles")) || [
+            { nombre: "Jugador 1", color: "blue" },
+            { nombre: "Jugador 2", color: "red" }
+        ];
+        let puntajes = JSON.parse(localStorage.getItem("puntajes")) || {
+            jugador1: { tateti: 0, generala: 0, memotest: 0 },
+            jugador2: { tateti: 0, generala: 0, memotest: 0 }
+        };
+
+        function actualizarTurno() {
+            let jugadorActual = perfiles[turno - 1];
+            let nombreJugador = document.getElementById("nombreJugador");
+            nombreJugador.textContent = jugadorActual.nombre;
+            nombreJugador.style.color = jugadorActual.color;
+        }
+
+        function crearTablero() {
+            tablero.innerHTML = "";
+            cartas.forEach((emoji, index) => {
+                let carta = document.createElement("div");
+                carta.classList.add("carta");
+                carta.dataset.index = index;
+                carta.dataset.emoji = emoji;
+                carta.textContent = "?";
+                carta.addEventListener("click", voltearCarta);
+                tablero.appendChild(carta);
+            });
+
+            actualizarTurno();
+        }
+
+        function voltearCarta(event) {
+            if (bloqueo) return;
+
+            let carta = event.target;
+            if (carta.classList.contains("volteada")) return;
+
+            let jugadorActual = perfiles[turno - 1];
+
+            carta.textContent = carta.dataset.emoji;
+            carta.classList.add("volteada");
+            carta.style.backgroundColor = jugadorActual.color;
+
+            if (!primeraCarta) {
+                primeraCarta = carta;
+            } else {
+                segundaCarta = carta;
+                bloqueo = true;
+
+                setTimeout(() => {
+                    if (primeraCarta.dataset.emoji === segundaCarta.dataset.emoji) {
+                        primeraCarta.style.visibility = "hidden";
+                        segundaCarta.style.visibility = "hidden";
+                        if (turno === 1) {
+                            paresJugador1++;
+                        } else {
+                            paresJugador2++;
+                        }
+                    } else {
+                        primeraCarta.textContent = "?";
+                        segundaCarta.textContent = "?";
+                        primeraCarta.classList.remove("volteada");
+                        segundaCarta.classList.remove("volteada");
+                        primeraCarta.style.backgroundColor = "grey";
+                        segundaCarta.style.backgroundColor = "grey";
+                        turno = turno === 1 ? 2 : 1;
+                        actualizarTurno();
+                    }
+
+                    primeraCarta = null;
+                    segundaCarta = null;
+                    bloqueo = false;
+                }, 1000);
+            }
+        }
+
+        document.getElementById("reiniciar").addEventListener("click", () => location.reload());
+
+        crearTablero();
+    </script>
+</body>
+</html>
