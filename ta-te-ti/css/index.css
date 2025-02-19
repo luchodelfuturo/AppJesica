@@ -36,11 +36,13 @@ body {
   display: block;
 }
 
-
+#turnos{
+  font-size: 25px;
+}
 
 h1,
 #tipografia {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bolder;
   margin: -20px 20px 20px 20px;
   padding: 0px;
@@ -81,7 +83,7 @@ h1,
 #ta-te-ti {
   width: 80%; /* Ajustar el ancho de la tabla según sea necesario */
   margin: 20px; /* Agregar un margen para mejorar la apariencia */
-  background-color: #6fa64b94;
+  background-color: #bae69cce;
   border-collapse: collapse; /* Elimina los espacios entre las celdas */
 }
 
@@ -178,7 +180,7 @@ h1,
     width: 80%;
     height: 50px;
     margin: 0 auto; /* Centra la tabla horizontalmente sin márgenes verticales */
-    background-color: #6fa64b94;
+    background-color: #c7f9a6d6;
     border-collapse: collapse; /* Elimina los espacios entre las celdas */
   }
   /* Estilo para las celdas de la tabla */
@@ -201,6 +203,11 @@ h1,
 
 
 }
+
+#turnos{
+  font-size: 25px;
+}
+
 
 }
 
