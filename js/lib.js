@@ -63,7 +63,7 @@ function cerrarPopUpPuntos() {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Agregar un evento de clic al botón "3er Juego"
-  const btn3 = document.getElementById("boton-3er-juego");
+  // const btn3 = document.getElementById("boton-3er-juego");
   const btnPuntos = document.getElementById("botonPuntos");
   if (btn3) {
     btn3.addEventListener("click", function (event) {

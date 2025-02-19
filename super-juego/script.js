@@ -100,7 +100,7 @@ function finalizarJuego() {
 
     let mensaje = "¡Empate! Nadie gana puntos.";
     if (ganador) {
-        puntajes[`jugador${ganador}`].tercerGame += 20;
+        puntajes[`jugador${ganador}`].memotest += 20;
         localStorage.setItem("puntajes", JSON.stringify(puntajes));
         mensaje = `¡${perfiles[ganador - 1].nombre} gana con más pares!`;
     }
@@ -111,7 +111,7 @@ function finalizarJuego() {
 
 function cerrarPopup() {
     document.getElementById("popup").style.display = "none";
-    // reiniciarJuego();
+ reiniciarJuego();
 }
 
 function reiniciarJuego() {
