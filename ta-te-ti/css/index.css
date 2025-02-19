@@ -3,7 +3,7 @@ body {
   -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
   -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
   user-select: none;
-  background-image: linear-gradient(to bottom, #cfffc5 0%, #abf678 51%);
+  background-image: linear-gradient(to bottom, #A7BBA5 0%, #FBB117 100%);
   font-family: system-ui, -apple-system, -apple-system-font, "Segoe UI",
     "Roboto", sans-serif;
   font-size: 30px;
@@ -42,21 +42,27 @@ body {
 
 h1,
 #tipografia {
-  font-size: 30px;
+  font-size: 12px;
   font-weight: bolder;
   margin: -20px 20px 20px 20px;
   padding: 0px;
   overflow: visible;
   text-align: center;
-  color: rgba(255, 0, 149, 0.8);
+  color: #000000;
+}
+
+.logo{
+  height: 120px;
+  margin: 5px;
+
 }
 
 #enlace-volver {
-  margin-top: -90px;
-  padding-right: 240px;
+  margin-top: -120px;
+  padding-right: 300px;
 }
 #enlace-volver2 {
-  padding-right: 500px;
+  padding-right: 700px;
   margin-top: -140px;
 }
 
@@ -65,6 +71,8 @@ h1,
   width: 50px;
   height: 50px;
 }
+
+
 /*@media screen and (prefers-color-scheme: dark) {
     body {
         background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
@@ -83,7 +91,7 @@ h1,
 #ta-te-ti {
   width: 80%; /* Ajustar el ancho de la tabla según sea necesario */
   margin: 20px; /* Agregar un margen para mejorar la apariencia */
-  background-color: #bae69cce;
+  background-color:  #f0c463;
   border-collapse: collapse; /* Elimina los espacios entre las celdas */
 }
 
@@ -110,6 +118,8 @@ h1,
   display: none;
 }
 
+
+
 #juego-terminado {
   height: 100%;
   width: 100%;
@@ -119,7 +129,7 @@ h1,
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(255, 0, 149, 0.8);
+  background-color:  #FBB117;
 
   flex-direction: column;
   gap: 2rem;
@@ -131,14 +141,14 @@ h1,
   height: 90px;
   font-size: large;
   width: 176px;
-  background-color: #69b15a;
+  background-color: #443616;
   color: white;
   font-weight: 900;
   line-height: 3;
   color: #fff;
   border-radius: 20px;
   text-decoration: none;
-  border-color: #69b15a;
+  border-color:  #7e6221;
 }
 
 #botonSalir {
@@ -180,12 +190,12 @@ h1,
     width: 80%;
     height: 50px;
     margin: 0 auto; /* Centra la tabla horizontalmente sin márgenes verticales */
-    background-color: #c7f9a6d6;
+    background-color: #d79448d6;
     border-collapse: collapse; /* Elimina los espacios entre las celdas */
   }
   /* Estilo para las celdas de la tabla */
 #ta-te-ti td {
-  border: 3px solid rgb(73, 220, 112);
+  border: 3px solid #E65E26;
   font-size: 1rem;
   font-weight: bold;
   color: black;
@@ -207,6 +217,7 @@ h1,
 #turnos{
   font-size: 25px;
 }
+
 
 
 }

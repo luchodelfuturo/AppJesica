@@ -3,8 +3,7 @@ body {
   -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
   -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
   user-select: none;
-  background-color: #e4e4e4;
-  background-image: linear-gradient(to bottom, #cfffc5 0%, #abf678 51%);
+  background-image: linear-gradient(to bottom, #A7BBA5 0%, #FBB117 100%);
   font-family: system-ui, -apple-system, -apple-system-font, "Segoe UI",
     "Roboto", sans-serif;
   font-size: 16px;
@@ -38,7 +37,7 @@ body {
 h1 {
   padding-left: 61px;
   text-align:left;
-  color: rgba(255, 0, 149, 0.8);
+  color: #000000;
 }
 
 #enlace-volver {
@@ -56,7 +55,7 @@ h1 {
 }
 
 .dado.seleccionado {
-  border: 2px solid rgba(255, 0, 149, 0.8);
+  border: 2px solid #da980a;
 }
 
 /* tendria que ser del color del usuario correspondiente */
@@ -65,7 +64,7 @@ h1 {
 } */
 
 #modal {
-  background-color:#abf678;
+  background-color:#f6bd78;
   border-radius: 1em;
   color: white;
   text-align: center;
@@ -76,23 +75,23 @@ h1 {
   z-index: 30;
 }
 #tiros{
-  height: 50px;
-  font-size: 2em;
-  padding-bottom: 20px;
+  height: 30px;
+  font-size: 1em;
+  padding-bottom: 10px;
 
 }
 
 
 button {
-  height: 50px;
+  height: 40px;
   font-weight: 800;
-  width: 82px;
+  width: 80px;
   line-height: 20px;
   line-height: 2;
   padding: 1px;
-  background: #2d8743;
-  border: rgba(162, 16, 111, 0.8);
-  color: #fff;
+  background: #87572d;
+  border: rgba(162, 57, 16, 0.8);
+  color: #000000;
   border-radius: 20px;
   text-decoration: none;
   margin: 20px 0;
@@ -114,7 +113,7 @@ table#puntajes {
 
 }
 #puntajes {
-  background-color: #f13295;
+  background-color: #f17832;
     border-radius: 6px;
     width: 55%;
   
@@ -129,9 +128,9 @@ table#puntajes {
 }
 #modal,
 #modal2 {
-  background-color:#abf678;
+  background-color:#f6aa78;
   border-radius: 1em;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 5px 10px;
   margin: auto;
@@ -153,7 +152,7 @@ table#puntajes {
 } */
 
 #modal2 h2 {
-  background-color:#abf678;
+  background-color:#c35353;
 
   border-radius: 0, 2em;
 }
@@ -163,22 +162,30 @@ table#puntajes {
 }
 
 .btn{
-  background-color: #93cc6d;
+  background-color: #654821;
 
 }
+
+.logo{
+  height: 120px;
+  margin: -10px;
+
+}
+
+
 @media screen and (prefers-color-scheme: dark) {
   body {
-    background-image: linear-gradient(to bottom, #cfffc5 0%, #abf678 51%);
-  }
+    background-image: linear-gradient(to bottom, #A7BBA5 0%, #FBB117 100%);
+    }
 }
 
 .boton_juegos {
-  font-weight: 800;
+  font-weight: 500;
   width: 20px;
   line-height: 20px;
   line-height: 2;
   padding: 1px;
-  color: #fff;
+  color: #000000;
   border-radius: 20px;
   text-decoration: none;
   margin: 20px 0;
@@ -210,7 +217,7 @@ table#puntajes {
   h1{
     padding: 0px;
     text-align: center;
-    color: rgba(255, 0, 149, 0.8);
+    color: rgba(255, 140, 0, 0.8);
   }
 
   .header {
@@ -227,7 +234,7 @@ table#puntajes {
   }
 
   .btnscont {
-    margin: 0px;
+    margin: -15px;
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -243,7 +250,7 @@ table#puntajes {
     font-size: 0.8em; /* Ajusta según sea necesario */
   }
   #puntajes {
-    background-color: #f13295;
+    background-color: #f16e32;
   border-radius: 6px;
   width: 85%;
   margin: 8px auto;
@@ -251,7 +258,7 @@ table#puntajes {
   height: 420px;
 }
   table#puntajes {
-    margin-bottom: 50px;
+    margin-bottom: -10px;
     margin-left: 25px;
 }
 #enlace-volver {

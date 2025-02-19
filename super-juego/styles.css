@@ -21,15 +21,31 @@ body {
 
 #tablero {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
+    grid-template-columns: repeat(4, 80px);
     grid-gap: 10px;
     justify-content: center;
     margin: 20px auto;
 }
 
+#reiniciar{
+    
+    width: 245px;
+   
+    padding: 12px 25px;
+    /* Fondo: usamos #FBB117 y al hacer hover cambia a #E65E26 */
+    background: #FBB117;
+    border: none;
+    /* Textos solo en blanco o negro: aquí usamos blanco */
+    color: #FFFFFF;
+    border-radius: 15px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin: 20px auto;  
+}
 .carta {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-color: grey;
     display: flex;
     align-items: center;
@@ -53,6 +69,21 @@ button {
     cursor: pointer;
 }
 
+.logo{
+    height: 160px;
+    margin: 5px;
+  
+  }
+  
+  img.boton_juegos  {
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: -60px;
+    margin-left: -250px;
+
+  }
+  
 /* Estilos del popup */
 .popup {
     display: none;

@@ -7,16 +7,23 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <a id="volver" href="../menu.html">⬅</a>
+    <div class="app">
+    <div id="enlace-volver">
+        <a href="../menu.html">
+          <img src="../img/volver-02.png" alt="Salir" class="boton_juegos" />
+        </a>
+    <div class="header">
+        <img src="frutijuegos-4.png" alt="FrutiJuegos" class="logo">
 
-    <h1>Memotest</h1>
-    
+    <!-- <a id="volver" href="../menu.html">⬅</a> -->
+
+    <div class="tablerojuego">
     <div id="turnoJugador">Turno de: <span id="nombreJugador"></span></div>
 
     <div id="juego">
         <div id="tablero"></div>
     </div>
-
+</div>
     <button id="reiniciar">Reiniciar Juego</button>
 
     <!-- Popup de ganador -->
@@ -25,7 +32,7 @@
         <h2 id="mensajeGanador"></h2>
         <button onclick="cerrarPopup()">Jugar de nuevo</button>
     </div>
-
+</div>
     <script src="cordova.js"></script>
     <script src="script.js"></script>
     <script src="../js/lib.js"></script>

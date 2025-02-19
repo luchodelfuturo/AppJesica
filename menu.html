@@ -4,66 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/index.css" />
-    <title>3 Juegos</title>
-
-    <style></style>
+    <title>FritiJuegos</title>
   </head>
   <body>
     <div class="app">
-      <h1>3 Juegos</h1>
+      <img src="img/frutijuegos.png" alt="FrutiJuegos" class="logo">
 
       <ul>
         <li>
-          <a href="ta-te-ti/index.html"
-            ><button class="boton_juegos">Ta-Te-Ti</button></a
-          >
+          <a href="ta-te-ti/index.html">
+            <button class="boton_juegos">Ta-Te-Ti</button>
+          </a>
         </li>
-
         <li>
-          <a href="generala/index.html"
-            ><button class="boton_juegos">Generala</button></a
-          >
+          <a href="generala/index.html">
+            <button class="boton_juegos">Generala</button>
+          </a>
         </li>
-
         <li>
-          <a href="super-juego/index.html"
-            ><button class="boton_juegos"> Memotest </button></a
-          >
+          <a href="super-juego/index.html">
+            <button class="boton_juegos">Memotest</button>
+          </a>
         </li>
       </ul>
       <div>
-        <!-- <a href="puntajes"></a>   -->
-        <!-- <button id="botonPuntaje">Puntajes</button> -->
-        <!-- <button id="botonPuntaje" onclick="mostrarPopup()">Puntajes</button> -->
-
         <button id="botonPuntos">Puntajes</button> <br />
         <a href="perfil.html?player=0">
-          <button id="botonPuntaje">perfil 1</button></a
-        >
+          <button id="botonPuntaje">perfil 1</button>
+        </a>
         <a href="perfil.html?player=1">
-          <button id="botonPuntaje">perfil 2</button></a
-        >
+          <button id="botonPuntaje">perfil 2</button>
+        </a>
       </div>
-      <!-- <div id="tabla-puntajes" style="width: 400px"></div> -->
     </div>
-    <!-- Popup
-    <div id="popup" class="popup">
-      <div class="popup-contenido">
-        <span class="cerrar" onclick="cerrarPopup(1)">&times;</span>
-        <p id="popup-texto"></p>
-      </div>
-    </div> -->
-
     <div id="modalPuntos" class="modal">
-      <!-- Contenido del Modal -->
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Puntajes</h2>
-        <!-- La tabla se insertará aquí -->
         <div id="tabla-puntajes"></div>
       </div>
     </div>
-
     <script src="cordova.js"></script>
     <script src="js/lib.js"></script>
   </body>

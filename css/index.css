@@ -3,14 +3,13 @@ body {
   -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
   -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
   user-select: none;
-  background-image: linear-gradient(to bottom, #cfffc5 0%, #abf678 51%);
-  font-family: system-ui, -apple-system, -apple-system-font, "Segoe UI",
-    "Roboto", sans-serif;
+  background-color: #A7BBA5;
+  background-image: linear-gradient(to bottom, #A7BBA5 0%, #FBB117 100%);
+  font-family: system-ui, -apple-system, -apple-system-font, "Segoe UI", "Roboto", sans-serif;
   font-size: 30px;
   height: 100vh;
-  margin: 0px;
-  padding: 0px;
-  /* Padding to avoid the "unsafe" areas behind notches in the screen */
+  margin: 0;
+  padding: 0;
   padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px)
     env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
   width: 100%;
@@ -29,22 +28,19 @@ body {
   align-items: center;
   line-height: 35px;
   justify-content: center;
-  
 }
 
 h1 {
-  
   font-size: 30px;
-    font-weight: bolder;
-    padding: -15px;
-    overflow: visible;
-    text-align: center;
-    color: rgba(255, 0, 149, 0.8);
+  font-weight: bolder;
+  padding: -15px;
+  text-align: center;
+  /* Textos solo en blanco o negro: aquí usamos negro */
+  color: #000000;
 }
 
 ul {
   list-style: none;
-  list-style-type: none;
   padding: 15px;
   margin: 0;
 }
@@ -53,13 +49,26 @@ li {
   margin-bottom: 10px;
 }
 
+.logo {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.logo:hover {
+  opacity: 0.5;
+}
+
+.imagen-perfil{
+  margin-top: -90px;
+  height: 180px;
+}
+
+
 #formulario {
-  color: rgba(255, 0, 149, 0.8);
+  color: #000000;
   display: inline-block;
   flex-direction: column;
   align-items: center;
   padding-right: 50px;
-
 }
 
 #formulario label {
@@ -67,6 +76,7 @@ li {
   font-weight: bolder;
   font-size: 18px;
   padding: 7px;
+  color: #000000;
 }
 
 #formulario input {
@@ -74,7 +84,6 @@ li {
   margin-bottom: 20px;
   margin-top: 10px;
   border: none;
-
 }
 
 .event {
@@ -103,15 +112,9 @@ li {
 }
 
 @keyframes fade {
-  from {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 1; }
+  50% { opacity: 0.4; }
+  to { opacity: 1; }
 }
 
 .blink {
@@ -124,36 +127,48 @@ li {
   height: 50px;
 }
 
+/* Botones de juegos con animación hover y active */
 .boton_juegos {    
   font-weight: 900;
   font-size: xx-large;
   width: 245px;
   line-height: 60px;
   padding: 12px 25px;
-  background: rgba(255, 0, 149, 0.8);
-  border: rgba(162, 16, 111, 0.8);
-  color: #fff;
+  /* Fondo: usamos #FBB117 y al hacer hover cambia a #E65E26 */
+  background: #FBB117;
+  border: none;
+  /* Textos solo en blanco o negro: aquí usamos blanco */
+  color: #FFFFFF;
   border-radius: 15px;
   text-decoration: none;
   display: block;
   text-align: center;
   margin: 20px auto;
+  transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+.boton_juegos:hover {
+  transform: scale(1.1);
+  background: #E65E26;
+}
+.boton_juegos:active {
+  transform: scale(0.95);
 }
 
+/* Botón para guardar perfil */
 #btn-guardar-perfil {
-  padding: 0px;
-    font-weight: 600;
-    font-size: smaller;
-    width: 158px;
-    height: 51px;
-    /* padding: 10px; */
-    background: rgba(255, 0, 149, 0.8);
-    border: rgba(162, 16, 111, 0.8);
-    color: #fff;
-    border-radius: 20px;
-    margin: 25px 0;
+  padding: 0;
+  font-weight: 600;
+  font-size: smaller;
+  width: 158px;
+  height: 51px;
+  background: #553c07;
+  border: none;
+  color: #FFFFFF;
+  border-radius: 20px;
+  margin: 25px 0;
 }
 
+/* Modal de puntajes y popups */
 .popupPuntos {
   display: none;
   position: fixed;
@@ -161,57 +176,82 @@ li {
   left: 0;
   width: 300px;
   height: 80vh;
-  color: white;
+  color: #FFFFFF;
 }
 
 .popup-contenido {
   height: 150px;
-    width: 200px;
-    font-size:20px;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(255 160 215 / 93%);
-    padding: 10px;
-    max-width: 300px;
-    border-radius: 5px;
-    color: white;
+  width: 200px;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FABCA3;
+  padding: 10px;
+  max-width: 300px;
+  border-radius: 5px;
+  color: #FFFFFF;
 }
 
 .cerrar {
   position: absolute;
   top: -8px; 
-  right: 5px ; 
+  right: 5px; 
   font-size: 35px; 
   cursor: pointer;
 }
 
+/* Botón de perfil */
 #botonPuntaje,
 .boton-empezar {
   font-weight: 1000;
-    font-size: medium;
-    width: 120px;
-    line-height: 35px;
-    padding: 5px 12px;
-    background: #50df74;
-    border: rgba(162, 16, 111, 0.8);
-    color: #fff;
-    border-radius: 10px;
-    margin: 10px 0;
+  font-size: medium;
+  width: 120px;
+  line-height: 35px;
+  padding: 5px 12px;
+  background: #443616;
+  border: none;
+  color: #FFFFFF;
+  border-radius: 10px;
+  margin: 10px 0;
+  transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+#botonPuntaje:hover {
+  transform: scale(1.05);
+  background: #E65E26;
+}
+
+/* Botón de puntajes */
+#botonPuntos {
+  font-size: smaller;
+  font-weight: 1000;
+  width: 245px;
+  height: 50px;
+  line-height: 35px;
+  padding: 2px 12px;
+  background: #495538;
+  border: none;
+  color: #FFFFFF;
+  border-radius: 10px;
+  margin: 10px 0;
+  transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
+}
+#botonPuntos:hover {
+  transform: scale(1.05);
+  background: #FABCA3;
 }
 
 a {
   text-decoration: none !important;
 }
 
-/* Estilos básicos para la tabla */
 table {
   border-collapse: collapse;
   width: 90%;
   margin: auto;
-  font-size: 0.8em; /* Tamaño de fuente más pequeño para móviles */
+  font-size: 0.8em;
 }
 th,
 td {
@@ -220,40 +260,35 @@ td {
   width: 90px;
   padding: 8px;
 }
-/* Estilos para la primera fila y columna vacía */
 th:first-child,
 td:first-child {
   border: none;
-  border: 1px solid #ffffff
+  border: 1px solid #ffffff;
 }
 
-/* Estilo del modal (debería estar oculto inicialmente) */
 .modal {
-  display: none; /* Ocultar el modal por defecto */
-  position: fixed; /* Mantenerlo fijo en pantalla */
-  z-index: 1; /* Situarlo sobre otros elementos */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Ancho completo */
-  height: 100%; /* Altura completa */
-  overflow: auto; /* Habilitar scroll si es necesario */
-  background-color: rgb(0, 0, 0); /* Color de fondo con opacidad */
-  background-color: rgba(0, 0, 0, 0.4); /* Negro con opacidad */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Estilo del contenido del modal */
 .modal-content {
   padding-left: 20px;
   margin-left: 120px;
   display: inline-table;
-  background-color: rgba(255, 0, 149, 0.8);
+  background-color: #FABCA3;
   padding: 25px;
-  border: 1px rgba(255, 152, 212, 0.8);
+  border: none;
   height: 55%;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
-/* Estilo del botón para cerrar el modal */
 .close {
   color: #aaa;
   float: right;
@@ -263,99 +298,73 @@ td:first-child {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: #000000;
   text-decoration: none;
   cursor: pointer;
 }
 
-#botonPuntos{
-  font-size: smaller;
-    font-weight: 1000;
-    width: 245px;
-    height: 50px;
-    line-height: 35px;
-    padding: 2px 12px;
-    background: #42614a;
-    border: rgba(162, 16, 111, 0.8);
-    color: #fff;
-    border-radius: 10px;
-    margin: 10px 0;
-}
-
 #enlace-volver {
-  /* margin-top: -90px;
-  padding-right: 240px; */
-  margin-top: 0px;
-padding-left: 18px;
-
-
+  margin-top: 0;
+  padding-left: 18px;
 }
 
-
-#enlace-volver img{
+#enlace-volver img {
   width: 50px;
   height: 50px;
 }
 
-/* aca va todo lo verticalpx con un max de 400 */
 @media screen and (max-width: 400px) {
-.app {
-  width: 100%;
-  text-align: center;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-h1 {
-  line-height: 55px;
-  font-size: 60px;
+  .app {
+    width: 100%;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  h1 {
+    line-height: 55px;
+    font-size: 60px;
     font-weight: bolder;
     margin-bottom: 50px;
-    padding: 0px;
+    padding: 0;
     overflow: visible;
     text-align: center;
-    color: rgba(255, 0, 149, 0.8);
-}
-
-ul {
-  list-style: none;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.modal-content {
-  display: table;
-  background-color: rgba(255, 0, 149, 0.8);
-  margin: 35% 9px; /* 15% desde la parte superior y centrado horizontalmente */
-  padding: 25px;
-  border: 1px rgba(255, 152, 212, 0.8);
-  width: 60%; /* Ancho del contenido */
-  color: #ffffff;
-}
-#enlace-volver {
-
-  padding-right: 290px;
-
-}
-#formulario {
-  line-height: 60px;
-  color: rgba(255, 0, 149, 0.8);
-  display: inline-block;
-  flex-direction: column;
-  align-items: center;
-}
-#formulario input{
-  width: 50%;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  border: none;
-  height: 35px;
-
-}
-.popup-contenido {
-  height: 200px;
+    color: #000000;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .modal-content {
+    display: table;
+    background-color: #FABCA3;
+    margin: 35% 9px;
+    padding: 25px;
+    width: 60%;
+    color: #FFFFFF;
+  }
+  #enlace-volver {
+    padding-right: 290px;
+  }
+  #formulario {
+    line-height: 60px;
+    color: #000000;
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+  }
+  #formulario input {
+    width: 50%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: none;
+    height: 35px;
+  }
+  .popup-contenido {
+    height: 200px;
     width: 250px;
     font-size: smaller;
     text-align: center;
@@ -367,14 +376,13 @@ ul {
     padding: 10px;
     max-width: 300px;
     border-radius: 5px;
-    color: white;
-}
-
-.cerrar {
-  position: absolute;
-  top: -8px; 
-  right: 5px ; 
-  font-size: 35px; 
-  cursor: pointer;
-}
+    color: #FFFFFF;
+  }
+  .cerrar {
+    position: absolute;
+    top: -8px; 
+    right: 5px; 
+    font-size: 35px; 
+    cursor: pointer;
+  }
 }

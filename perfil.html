@@ -4,40 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/index.css" />
-    <title>perfil</title>
+    <title>Perfil</title>
   </head>
   <body id="formulario" onload="cargarPerfil()">
-  
     <div class="app">
       <div id="enlace-volver">
-        <a href="../menu.html">
-          <img src="img/volver-01.png" alt="Salir" class="boton_juegos2" />
+        <a href="menu.html">
+          <img src="img/volver-02.png" alt="Salir" class="boton_juegos2" />
         </a>
       </div>
 
-    <h1>Perfil del jugador <span id="jugador"></span></h1>
-    
-    <form id="formulario">
-      <label for="nombre">Nombre: </label><input type="nombre" id="nombre" /><br />
+      <!-- Imagen del perfil según el jugador -->
+      <img id="imagen-perfil" src="" alt="Perfil del Jugador" class="imagen-perfil"/>
 
-      <label for="apodo">Apodo: </label><input type="apodo" id="apodo" /><br />
+      <form id="formulario">
+        <label for="nombre">Nombre: </label>
+        <input type="text" id="nombre" /><br />
 
-      <label for="color">Color: </label><input id="color" type="color" /><br />
+        <label for="apodo">Apodo: </label>
+        <input type="text" id="apodo" /><br />
 
-      <label for="pic">Foto:</label
-      ><img
-        id="pic"
-        src="img/usuario-de-perfil.png"
-        alt="foto"
-        onclick="takePicture()"
-      /><br />
+        <label for="color">Color: </label>
+        <input id="color" type="color" /><br />
 
-      <button type="button" id="btn-guardar-perfil">Guardar</button>
-    </form>
-    
-  </div>
+        <label for="pic">Foto:</label>
+        <img id="pic" src="img/usuario-de-perfil.png" alt="foto" onclick="takePicture()" /><br />
+
+        <!-- Nueva sección: Seleccionar fruta favorita -->
+        <label for="fruta">Fruta favorita: </label>
+        <select id="fruta">
+          <option value="manzana">🍏 Manzana</option>
+          <option value="banana">🍌 Banana</option>
+          <option value="naranja">🍊 Naranja</option>
+          <option value="uva">🍇 Uva</option>
+          <option value="sandia">🍉 Sandía</option>
+          <option value="pera">🍐 Pera</option>
+          <option value="frutilla">🍓 Frutilla</option>
+        </select><br />
+
+        <button type="button" id="btn-guardar-perfil">Guardar</button>
+      </form>
+    </div>
+
     <script src="cordova.js"></script>
     <script src="js/lib.js"></script>
     <script src="js/perfil.js"></script>
+    <script>
+      // Detectar el número de jugador desde la URL y cambiar la imagen
+      function cambiarImagenPerfil() {
+        const params = new URLSearchParams(window.location.search);
+        const player = params.get("player");
+        const imagenPerfil = document.getElementById("imagen-perfil");
+
+        if (player === "0") {
+          imagenPerfil.src = "img/frutijuegos-5.png";
+        } else {
+          imagenPerfil.src = "img/frutijuegos-6.png";
+        }
+      }
+
+      cambiarImagenPerfil();
+    </script>
   </body>
 </html>
