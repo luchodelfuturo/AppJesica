@@ -83,10 +83,46 @@ function voltearCarta(event) {
             primeraCarta = null;
             segundaCarta = null;
             bloqueo = false;
+            if (paresJugador1 + paresJugador2 === totalPares) {
+                finalizarJuego();
+            }
         }, 1000);
     }
 }
 
-document.getElementById("reiniciar").addEventListener("click", () => location.reload());
+function finalizarJuego() {
+    let ganador = null;
+    if (paresJugador1 > paresJugador2) {
+        ganador = 1;
+    } else if (paresJugador2 > paresJugador1) {
+        ganador = 2;
+    }
+
+    let mensaje = "¡Empate! Nadie gana puntos.";
+    if (ganador) {
+        puntajes[`jugador${ganador}`].tercerGame += 20;
+        localStorage.setItem("puntajes", JSON.stringify(puntajes));
+        mensaje = `¡${perfiles[ganador - 1].nombre} gana con más pares!`;
+    }
+
+    document.getElementById("mensajeGanador").textContent = mensaje;
+    document.getElementById("popup").style.display = "block";
+}
+
+function cerrarPopup() {
+    document.getElementById("popup").style.display = "none";
+    // reiniciarJuego();
+}
+
+function reiniciarJuego() {
+    cartas.sort(() => Math.random() - 0.5);
+    paresJugador1 = 0;
+    paresJugador2 = 0;
+    turno = 1;
+    crearTablero();
+}
+
+document.getElementById("reiniciar").addEventListener("click", reiniciarJuego);
 
 crearTablero();
+

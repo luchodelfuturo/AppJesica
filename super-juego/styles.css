@@ -1,17 +1,23 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-image: linear-gradient(to bottom, #cfffc5 0%, #abf678 51%);
+    background-image: linear-gradient(to bottom, #A7BBA5 0%, #FBB117 100%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
 }
 
-#volver {
+/* #volver {
     position: absolute;
     top: 10px;
     left: 10px;
     font-size: 24px;
     text-decoration: none;
     color: black;
-}
+} */
 
 #turnoJugador {
     font-size: 20px;
@@ -30,12 +36,10 @@ body {
 #reiniciar{
     
     width: 245px;
-   
     padding: 12px 25px;
-    /* Fondo: usamos #FBB117 y al hacer hover cambia a #E65E26 */
-    background: #FBB117;
+    background: #453615;
     border: none;
-    /* Textos solo en blanco o negro: aquí usamos blanco */
+
     color: #FFFFFF;
     border-radius: 15px;
     text-decoration: none;
@@ -91,7 +95,7 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
+    background-color:#FBB117;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
@@ -100,14 +104,18 @@ button {
 }
 
 .popup h2 {
+    color: #FFFFFF;
     margin: 0;
 }
 
-.popup button {
+/* .popup button {
+    color: #FFFFFF;
+    border-radius: 10px;
+    background-color: #453615;
     margin-top: 10px;
     padding: 10px;
     font-size: 16px;
-}
+} */
 
 .cerrar {
     position: absolute;
