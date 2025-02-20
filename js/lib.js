@@ -110,7 +110,7 @@ function crearTabla() {
   Object.keys(puntajes.jugador1).forEach((juego) => {
     let row = tbody.insertRow();
     let cellNombreJuego = row.insertCell();
-    cellNombreJuego.appendChild(document.createTextNode(juego)); // Nombre completo del juego
+    cellNombreJuego.appendChild(document.createTextNode(juego)); 
 
     perfiles2.forEach((perfil) => {
       let cellPuntaje = row.insertCell();
@@ -146,7 +146,7 @@ span.onclick = function () {
   modal.style.display = "none";
 };
 
-// Cuando el usuario hace clic fuera del modal, ciérralo
+// Cuando el usuario hace clic fuera del modal, lo cierra
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
