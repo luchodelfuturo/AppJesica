@@ -27,8 +27,8 @@ function actualizarTurno() {
     nombreJugador.style.color = jugadorActual.color;
 }
 
-function crearTablero() {
-    tablero.innerHTML = "";
+function crearTablero() { 
+    tablero.innerHTML = ""; // Limpia el tablero antes de crearlo
     cartas.forEach((emoji, index) => {
         let carta = document.createElement("div");
         carta.classList.add("carta");
@@ -46,12 +46,12 @@ function voltearCarta(event) {
     if (bloqueo) return;
 
     let carta = event.target;
-    if (carta.classList.contains("volteada")) return;
+    if (carta.classList.contains("volteada")) return;  // Si hay dos cartas volteadas, no permite más clics
 
     let jugadorActual = perfiles[turno - 1];
 
     carta.textContent = carta.dataset.emoji;
-    carta.classList.add("volteada");
+    carta.classList.add("volteada"); // Evita voltear una ya volteada
     carta.style.backgroundColor = jugadorActual.color;
 
     if (!primeraCarta) {
@@ -61,6 +61,7 @@ function voltearCarta(event) {
         bloqueo = true;
 
         setTimeout(() => {
+                 // ¡Par encontrado! Oculta las cartas
             if (primeraCarta.dataset.emoji === segundaCarta.dataset.emoji) {
                 primeraCarta.style.visibility = "hidden";
                 segundaCarta.style.visibility = "hidden";
@@ -70,6 +71,7 @@ function voltearCarta(event) {
                     paresJugador2++;
                 }
             } else {
+                // No son iguales, las voltea de nuevo
                 primeraCarta.textContent = "?";
                 segundaCarta.textContent = "?";
                 primeraCarta.classList.remove("volteada");
@@ -86,7 +88,7 @@ function voltearCarta(event) {
             if (paresJugador1 + paresJugador2 === totalPares) {
                 finalizarJuego();
             }
-        }, 1000);
+        }, 1000); // Espera 1 segundo antes de voltear o eliminar las cartas
     }
 }
 
