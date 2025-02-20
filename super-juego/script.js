@@ -1,3 +1,4 @@
+//Inicialización de las cartas
 let cartas = ["🍎", "🍌", "🍇", "🍉", "🍓", "🍒", "🍍", "🥭"];
 cartas = [...cartas, ...cartas];
 cartas.sort(() => Math.random() - 0.5);
@@ -11,6 +12,7 @@ let paresJugador1 = 0;
 let paresJugador2 = 0;
 let totalPares = cartas.length / 2;
 
+// Cargar los jugadores desde LocalStorage
 let perfiles = JSON.parse(localStorage.getItem("perfiles")) || [
     { nombre: "Jugador 1", color: "blue" },
     { nombre: "Jugador 2", color: "red" }
@@ -20,12 +22,15 @@ let puntajes = JSON.parse(localStorage.getItem("puntajes")) || {
     jugador2: { tateti: 0, generala: 0, memotest: 0 }
 };
 
+//Mostrar el turno del jugador
 function actualizarTurno() {
     let jugadorActual = perfiles[turno - 1];
     let nombreJugador = document.getElementById("nombreJugador");
     nombreJugador.textContent = jugadorActual.nombre;
     nombreJugador.style.color = jugadorActual.color;
 }
+
+// Crear el tablero
 
 function crearTablero() { 
     tablero.innerHTML = ""; // Limpia el tablero antes de crearlo
